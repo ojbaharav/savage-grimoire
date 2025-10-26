@@ -79,7 +79,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ filters, onFilterChange, filt
             />
           ))}
         </Box>
-        <Box mt={2}>
+        {/* <Box mt={2}>
           <Typography variant="subtitle1">Power Points</Typography>
           {powerPoints.map(pp => (
             <FormControlLabel
@@ -93,7 +93,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ filters, onFilterChange, filt
               label={pp.toString()}
             />
           ))}
-        </Box>
+        </Box> */}
         <Box mt={2}>
           <Typography variant="subtitle1">Arcane Background</Typography>
           {arcaneBackgrounds.map(ab => (
