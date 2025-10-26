@@ -136,7 +136,7 @@ The AI will assist in selecting and integrating a component library that best fi
 * **MUI (formerly Material-UI):** A comprehensive suite of components that implement Google's Material Design. Ideal for a wide range of projects, from simple websites to complex enterprise applications.
   **Allowed Components:**
   - `Table`, `TableHead`, `TableBody`, `TableRow`, `TableCell` for the data table
-  - `Checkbox`, `FormControlLabel` for filtering
+  - `Checkbox`, `FormControlLabel`, `Select` for filtering
   - `Paper`, `Container`, `Box` for layout
   - `Typography` for text styling
   - `Switch` for theme toggle
