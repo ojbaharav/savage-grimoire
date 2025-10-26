@@ -134,6 +134,15 @@ function MyComponent() {
 The AI will assist in selecting and integrating a component library that best fits the project's needs. The following are popular choices that the AI is familiar with:
 
 * **MUI (formerly Material-UI):** A comprehensive suite of components that implement Google's Material Design. Ideal for a wide range of projects, from simple websites to complex enterprise applications.
+  **Allowed Components:**
+  - `Table`, `TableHead`, `TableBody`, `TableRow`, `TableCell` for the data table
+  - `Checkbox`, `FormControlLabel` for filtering
+  - `Paper`, `Container`, `Box` for layout
+  - `Typography` for text styling
+  - `Switch` for theme toggle
+  - `Chip` for filter tags
+  - `Divider` for visual separation
+    *   **Usage Guidelines:** Only use the components listed above. For any new component, get approval first.
 * **Ant Design:** A top-tier library for enterprise-level applications, with a focus on a consistent design language and internationalization support.
 * **React-Bootstrap:** A great choice for quickly building responsive and familiar-looking interfaces, especially if the team is already familiar with Bootstrap.
 * **Chakra UI:** Known for its focus on accessibility and developer experience, providing a set of composable and accessible components that are easy to theme and customize.

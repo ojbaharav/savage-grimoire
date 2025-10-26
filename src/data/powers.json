@@ -1,0 +1,695 @@
+
+{
+  "powers": [
+  {
+    "POWER": "Arcane Protection",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 1,
+    "RANGE": "Sm",
+    "DURATION": 5,
+    "SUMMARY": "Enemy casters subtract 2 (4 with a raise) when targeting this character; reduces damage a like amount.",
+    "Arcane Backgrounds": "NECROMANCER, SHAMAN, SORCERER, SUMMONER, WIZARD",
+    "Domain": "War"
+  },
+  {
+    "POWER": "Banish",
+    "RANK": "(3) Veteran",
+    "POWER POINTS": 3,
+    "RANGE": "Sm",
+    "DURATION": "Instant",
+    "SUMMARY": "Opposed roll vs Spirit to banish entities.",
+    "Arcane Backgrounds": "CHEMIST, NECROMANCER, SHAMAN, SORCERER",
+    "Domain": ""
+  },
+  {
+    "POWER": "Barrier",
+    "RANK": "(2) Seasoned",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": "Instant",
+    "SUMMARY": "Creates wall 5\" (10 yards) long, 1\" (2 yards) tall, Hardness 10 barrier (12 with a raise).",
+    "Arcane Backgrounds": "ELEMENTALIST, NECROMANCER, SHAMAN, SORCERER, WIZARD",
+    "Domain": "Forge and Fire, Light"
+  },
+  {
+    "POWER": "Beast Friend",
+    "RANK": "(1) Novice",
+    "POWER POINTS": "S",
+    "RANGE": "Sm",
+    "DURATION": "10m",
+    "SUMMARY": "Controls animals.",
+    "Arcane Backgrounds": "CHEMIST, SHAMAN, SORCERER, SUMMONER, WIZARD",
+    "Domain": "Nature"
+  },
+  {
+    "POWER": "Blast",
+    "RANK": "(2) Seasoned",
+    "POWER POINTS": 3,
+    "RANGE": "Sm*2",
+    "DURATION": "Instant",
+    "SUMMARY": "2d6 damage in Medium Blast Template.",
+    "Arcane Backgrounds": "CHEMIST, ELEMENTALIST, SHAMAN, SORCERER, TINKERER, WIZARD",
+    "Domain": "Light, Tempest"
+  },
+  {
+    "POWER": "Blessing",
+    "RANK": "(2) Seasoned",
+    "POWER POINTS": 10,
+    "RANGE": "Special",
+    "DURATION": "1y",
+    "SUMMARY": "Improves community's health and crops.",
+    "Arcane Backgrounds": "SHAMAN, SORCERER",
+    "Domain": "Light"
+  },
+  {
+    "POWER": "Blind",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": "Instant",
+    "SUMMARY": "Inflicts –2/–4 penalty to victims’ sight.",
+    "Arcane Backgrounds": "CHEMIST, ILLUSIONIST, NECROMANCER, SHAMAN, SORCERER, TINKERER, WIZARD",
+    "Domain": "Light, Trickery"
+  },
+  {
+    "POWER": "Bolt",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 1,
+    "RANGE": "Sm*2",
+    "DURATION": "Instant",
+    "SUMMARY": "2d6 ranged attack.",
+    "Arcane Backgrounds": "ELEMENTALIST, NECROMANCER, SHAMAN, SORCERER, TINKERER, WIZARD",
+    "Domain": "Light, Tempest"
+  },
+  {
+    "POWER": "Boost/Lower Trait",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 3,
+    "RANGE": "Sm",
+    "DURATION": "5/Instant",
+    "SUMMARY": "Increases or decreases a skill or attribute.",
+    "Arcane Backgrounds": "CHEMIST, NECROMANCER, SHAMAN, SORCERER, SUMMONER (Summoned creatures only), WIZARD",
+    "Domain": "Nature, Death, Knowledge, Life, Trickery, War"
+  },
+  {
+    "POWER": "Burrow",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": 5,
+    "SUMMARY": "Target tunnels through the earth.",
+    "Arcane Backgrounds": "ELEMENTALIST (earth only), NECROMANCER, SHAMAN, SORCERER, SUMMONER, WIZARD",
+    "Domain": "Nature"
+  },
+  {
+    "POWER": "Burst",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 2,
+    "RANGE": "C or S",
+    "DURATION": "Instant",
+    "SUMMARY": "Cone or Stream attack for 2d6 damage.",
+    "Arcane Backgrounds": "CHEMIST, ELEMENTALIST, NECROMANCER, SHAMAN, SORCERER, TINKERER, WIZARD",
+    "Domain": "Nature, Light, Tempest"
+  },
+  {
+    "POWER": "Confusion",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": 5,
+    "SUMMARY": "Makes target Distracted and/or Vulnerable.",
+    "Arcane Backgrounds": "CHEMIST, ELEMENTALIST, ILLUSIONIST, NECROMANCER, SHAMAN, SORCERER, TINKERER, WIZARD",
+    "Domain": "Knowledge, Trickery"
+  },
+  {
+    "POWER": "Conjure Item",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": "1h",
+    "SUMMARY": "Conjures object, one lb. per 2 Power Points.",
+    "Arcane Backgrounds": "WIZARD",
+    "Domain": "Nature"
+  },
+  {
+    "POWER": "Curse",
+    "RANK": "(2) Seasoned",
+    "POWER POINTS": 5,
+    "RANGE": "T",
+    "DURATION": "S",
+    "SUMMARY": "Inflict a curse on opponent.",
+    "Arcane Backgrounds": "WIZARD",
+    "Domain": "Death, Light"
+  },
+  {
+    "POWER": "Damage Field",
+    "RANK": "(2) Seasoned",
+    "POWER POINTS": 4,
+    "RANGE": "Sm",
+    "DURATION": 5,
+    "SUMMARY": "Creates aura that causes 2d4 damage.",
+    "Arcane Backgrounds": "ELEMENTALIST (fire only), NECROMANCER, SHAMAN, SORCERER, TINKERER, WIZARD",
+    "Domain": "Death, Light, Nature, Tempest, War"
+  },
+  {
+    "POWER": "Darksight",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 1,
+    "RANGE": "Sm",
+    "DURATION": "1h",
+    "SUMMARY": "Ignore up to 4 points of illumination penalties, or 6 with a raise.",
+    "Arcane Backgrounds": "CHEMIST, NECROMANCER, SHAMAN, SORCERER, SUMMONER, TINKERER, WIZARD",
+    "Domain": "Nature"
+  },
+  {
+    "POWER": "Deflection",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": 5,
+    "SUMMARY": "–2/–4 Melee or Ranged attacks.",
+    "Arcane Backgrounds": "CHEMIST, ELEMENTALIST, ILLUSIONIST, NECROMANCER, SHAMAN, SORCERER, WIZARD",
+    "Domain": "Light, Trickery, War"
+  },
+  {
+    "POWER": "Detect/Conceal Arcana",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": "Instant",
+    "SUMMARY": "Detects magic for 5 rounds or conceals it for one hour.",
+    "Arcane Backgrounds": "CHEMIST, ILLUSIONIST, NECROMANCER, SHAMAN, SORCERER, SUMMONER, TINKERER, WIZARD",
+    "Domain": "Death, Knowledge, Trickery"
+  },
+  {
+    "POWER": "Disguise",
+    "RANK": "(2) Seasoned",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": "10m",
+    "SUMMARY": "Target looks like someone else.",
+    "Arcane Backgrounds": "ILLUSIONIST, NECROMANCER, SHAMAN, SORCERER, WIZARD",
+    "Domain": "Trickery"
+  },
+  {
+    "POWER": "Dispel",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 1,
+    "RANGE": "Sm",
+    "DURATION": "Instant",
+    "SUMMARY": "Negates magical powers and effects.",
+    "Arcane Backgrounds": "NECROMANCER, SHAMAN, SORCERER, WIZARD",
+    "Domain": "Nature"
+  },
+  {
+    "POWER": "Divination",
+    "RANK": "(2) Seasoned",
+    "POWER POINTS": 5,
+    "RANGE": "Self",
+    "DURATION": "5m",
+    "SUMMARY": "Caster asks questions of entities.",
+    "Arcane Backgrounds": "ELEMENTALIST, NECROMANCER, SHAMAN, SORCERER",
+    "Domain": "Knowledge"
+  },
+  {
+    "POWER": "Drain Power Points",
+    "RANK": "(3) Veteran",
+    "POWER POINTS": 3,
+    "RANGE": "Sm",
+    "DURATION": "Instant",
+    "SUMMARY": "Drains d6 Power Points from enemy with successful opposed roll of arcane skills.",
+    "Arcane Backgrounds": "NECROMANCER, SHAMAN, SORCERER, WIZARD",
+    "Domain": "Trickery"
+  },
+  {
+    "POWER": "Elemental Manipulation",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 1,
+    "RANGE": "Sm",
+    "DURATION": 5,
+    "SUMMARY": "Allows minor manipulation of basic elements.",
+    "Arcane Backgrounds": "ELEMENTALIST (native element only), SHAMAN, SORCERER, WIZARD",
+    "Domain": "Nature, Forge and Fire, Tempest"
+  },
+  {
+    "POWER": "Empathy",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 1,
+    "RANGE": "Sm",
+    "DURATION": 5,
+    "SUMMARY": "Opp. roll vs Spirit to add +2 to social Tests.",
+    "Arcane Backgrounds": "CHEMIST, NECROMANCER, SHAMAN, SORCERER, WIZARD",
+    "Domain": "Nature, Trickery"
+  },
+  {
+    "POWER": "Entangle",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": "Instant",
+    "SUMMARY": "Bind or Entangle foes.",
+    "Arcane Backgrounds": "CHEMIST, ELEMENTALIST, NECROMANCER, SHAMAN, SORCERER, TINKERER, WIZARD",
+    "Domain": "Nature, Trickery"
+  },
+  {
+    "POWER": "Environmental Protection",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": "1h",
+    "SUMMARY": "Protect target from hazardous environments.",
+    "Arcane Backgrounds": "CHEMIST, ELEMENTALIST (native element only), SHAMAN, SORCERER, TINKERER, WIZARD",
+    "Domain": "Nature, Forge and Fire, Tempest"
+  },
+  {
+    "POWER": "Farsight",
+    "RANK": "(2) Seasoned",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": 5,
+    "SUMMARY": "See detail at great distance; halves Range penalties with a raise.",
+    "Arcane Backgrounds": "CHEMIST, NECROMANCER, SHAMAN, SORCERER, SUMMONER, TINKERER, WIZARD",
+    "Domain": "Knowledge, Trickery"
+  },
+  {
+    "POWER": "Fear",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": "Instant",
+    "SUMMARY": "Causes Fear check.",
+    "Arcane Backgrounds": "CHEMIST, ILLUSIONIST, NECROMANCER, SHAMAN, SORCERER, WIZARD",
+    "Domain": "Trickery"
+  },
+  {
+    "POWER": "Fly",
+    "RANK": "(3) Veteran",
+    "POWER POINTS": 3,
+    "RANGE": "Sm",
+    "DURATION": 5,
+    "SUMMARY": "Target flies at Pace 12.",
+    "Arcane Backgrounds": "CHEMIST, ELEMENTALIST (air only), NECROMANCER, SHAMAN, SORCERER, SUMMONER, TINKERER, WIZARD",
+    "Domain": "Nature, Tempest"
+  },
+  {
+    "POWER": "Growth/Shrink",
+    "RANK": "(2) Seasoned",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": 5,
+    "SUMMARY": "Increases or decreases Size.",
+    "Arcane Backgrounds": "CHEMIST, SUMMONER, WIZARD",
+    "Domain": "Nature, Trickery"
+  },
+  {
+    "POWER": "Havoc",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": "Instant",
+    "SUMMARY": "Targets in template are Distracted and may be thrown for damage.",
+    "Arcane Backgrounds": "ELEMENTALIST (air only), NECROMANCER, SHAMAN, SORCERER, WIZARD",
+    "Domain": "Tempest, Trickery"
+  },
+  {
+    "POWER": "Healing",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 3,
+    "RANGE": "T",
+    "DURATION": "Instant",
+    "SUMMARY": "Restores Wounds less than an hour old.",
+    "Arcane Backgrounds": "CHEMIST, ELEMENTALIST (water only), NECROMANCER, SHAMAN, SORCERER, SUMMONER (Self and Summoned creatures only)",
+    "Domain": "Nature, Death, Life"
+  },
+  {
+    "POWER": "Illusion",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": 5,
+    "SUMMARY": "Create a virtual scene or replica of most anything the caster can imagine.",
+    "Arcane Backgrounds": "ILLUSIONIST, WIZARD",
+    "Domain": "Trickery"
+  },
+  {
+    "POWER": "Intangibility",
+    "RANK": "(3) Veteran",
+    "POWER POINTS": 5,
+    "RANGE": "Sm",
+    "DURATION": 5,
+    "SUMMARY": "Target becomes incorporeal.",
+    "Arcane Backgrounds": "CHEMIST, NECROMANCER, WIZARD",
+    "Domain": "Trickery"
+  },
+  {
+    "POWER": "Invisibility",
+    "RANK": "(2) Seasoned",
+    "POWER POINTS": 5,
+    "RANGE": "Sm",
+    "DURATION": "Instant",
+    "SUMMARY": "Target is invisible (–4/–6 to affect).",
+    "Arcane Backgrounds": "CHEMIST, ILLUSIONIST, NECROMANCER, WIZARD",
+    "Domain": "Trickery"
+  },
+  {
+    "POWER": "Light/Darkness",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": "10m",
+    "SUMMARY": "Creates or dispels illumination.",
+    "Arcane Backgrounds": "CHEMIST, ILLUSIONIST, NECROMANCER, SHAMAN, SORCERER, TINKERER, WIZARD",
+    "Domain": "Nature, Light, Tempest, Trickery"
+  },
+  {
+    "POWER": "Locate",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 2,
+    "RANGE": "Self",
+    "DURATION": "10m",
+    "SUMMARY": "Finds an object or being.",
+    "Arcane Backgrounds": "SUMMONER, WIZARD",
+    "Domain": ""
+  },
+  {
+    "POWER": "Lock/Unlock",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 1,
+    "RANGE": "Sm",
+    "DURATION": "P or Instant",
+    "SUMMARY": "Magically locks or unlocks portals or containers.",
+    "Arcane Backgrounds": "NECROMANCER, TINKERER, WIZARD",
+    "Domain": ""
+  },
+  {
+    "POWER": "Mind Link",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 1,
+    "RANGE": "Sm",
+    "DURATION": "30m",
+    "SUMMARY": "Mental link within one mile (5 with raise).",
+    "Arcane Backgrounds": "NECROMANCER",
+    "Domain": ""
+  },
+  {
+    "POWER": "Mind Reading",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": "Instant",
+    "SUMMARY": "Opposed roll vs Smarts to read mind.",
+    "Arcane Backgrounds": "NECROMANCER, WIZARD",
+    "Domain": "Trickery"
+  },
+  {
+    "POWER": "Mind Wipe",
+    "RANK": "(3) Veteran",
+    "POWER POINTS": 3,
+    "RANGE": "Sm",
+    "DURATION": "Instant",
+    "SUMMARY": "Removes and alters memories.",
+    "Arcane Backgrounds": "NECROMANCER, WIZARD",
+    "Domain": "Trickery"
+  },
+  {
+    "POWER": "Mystic Intervention",
+    "RANK": "(5) Legendary",
+    "POWER POINTS": 20,
+    "RANGE": "S",
+    "DURATION": "S",
+    "SUMMARY": "Causes a miracle of some sort.",
+    "Arcane Backgrounds": "SHAMAN, SORCERER, WIZARD",
+    "Domain": ""
+  },
+  {
+    "POWER": "Object Reading",
+    "RANK": "(2) Seasoned",
+    "POWER POINTS": 2,
+    "RANGE": "T",
+    "DURATION": "1m",
+    "SUMMARY": "Reveals vague impression of an object’s history (more detail with a raise).",
+    "Arcane Backgrounds": "NECROMANCER, SHAMAN, SORCERER, WIZARD",
+    "Domain": "Forge and Fire, Knowledge"
+  },
+  {
+    "POWER": "Planar Binding",
+    "RANK": "(3) Veteran",
+    "POWER POINTS": 8,
+    "RANGE": "Sm",
+    "DURATION": "Instant",
+    "SUMMARY": "Summon / bind creature from another plane.",
+    "Arcane Backgrounds": "WIZARD",
+    "Domain": ""
+  },
+  {
+    "POWER": "Plane Shift",
+    "RANK": "(3) Veteran",
+    "POWER POINTS": 4,
+    "RANGE": "Sm",
+    "DURATION": "Instant",
+    "SUMMARY": "Allows travel to other planes of existence.",
+    "Arcane Backgrounds": "ELEMENTALIST (native elemental planes only), WIZARD",
+    "Domain": ""
+  },
+  {
+    "POWER": "Protection",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 1,
+    "RANGE": "Sm",
+    "DURATION": 5,
+    "SUMMARY": "+2 Armor (+2 Toughness with raise).",
+    "Arcane Backgrounds": "CHEMIST, ELEMENTALIST, NECROMANCER, SHAMAN, SORCERER, WIZARD",
+    "Domain": "Nature, Forge and Fire, Light, War"
+  },
+  {
+    "POWER": "Puppet",
+    "RANK": "(3) Veteran",
+    "POWER POINTS": 1,
+    "RANGE": "Sm",
+    "DURATION": "Instant",
+    "SUMMARY": "Opposed roll vs Spirit to control target.",
+    "Arcane Backgrounds": "CHEMIST, WIZARD",
+    "Domain": "Trickery"
+  },
+  {
+    "POWER": "Relief",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 1,
+    "RANGE": "Sm",
+    "DURATION": "Instant/1h",
+    "SUMMARY": "Removes Shaken, Distracted, or Vulnerable states (2 with raise), or ignores 1 point of Wound and Fatigue penalties (2 with a raise).",
+    "Arcane Backgrounds": "CHEMIST, NECROMANCER, SHAMAN, SORCERER, ELEMENTALIST (water only)",
+    "Domain": "Nature, Life"
+  },
+  {
+    "POWER": "Resurrection",
+    "RANK": "(4) Heroic",
+    "POWER POINTS": 30,
+    "RANGE": "T",
+    "DURATION": "Instant",
+    "SUMMARY": "Brings the dead back to life.",
+    "Arcane Backgrounds": "CHEMIST, NECROMANCER, SHAMAN, SORCERER",
+    "Domain": "Death, Life"
+  },
+  {
+    "POWER": "Sanctuary",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 2,
+    "RANGE": "T",
+    "DURATION": 5,
+    "SUMMARY": "Foes must make a Spirit roll to attack.",
+    "Arcane Backgrounds": "CLERIC, DRUID",
+    "Domain": "Nature"
+  },
+  {
+    "POWER": "Scrying",
+    "RANK": "(2) Seasoned",
+    "POWER POINTS": 3,
+    "RANGE": "Self",
+    "DURATION": "Instant",
+    "SUMMARY": "Caster can see and hear a target and surrounding area remotely.",
+    "Arcane Backgrounds": "WIZARD",
+    "Domain": ""
+  },
+  {
+    "POWER": "Shape Change",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": 5,
+    "SUMMARY": "Caster takes on the form of various beings.",
+    "Arcane Backgrounds": "CHEMIST, SHAMAN, SORCERER, SUMMONER, WIZARD",
+    "Domain": "Nature, Trickery"
+  },
+  {
+    "POWER": "Sloth/Speed",
+    "RANK": "(2) Seasoned",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": "Instant/5",
+    "SUMMARY": "Increases or decreases movement.",
+    "Arcane Backgrounds": "CHEMIST, NECROMANCER, SHAMAN, SORCERER, SUMMONER (Summoned creatures only), WIZARD",
+    "Domain": "Tempest, Trickery, War"
+  },
+  {
+    "POWER": "Slumber",
+    "RANK": "(2) Seasoned",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": "1h",
+    "SUMMARY": "Puts victims to sleep.",
+    "Arcane Backgrounds": "CHEMIST, NECROMANCER, SHAMAN, SORCERER, TINKERER, WIZARD",
+    "Domain": "Trickery"
+  },
+  {
+    "POWER": "Smite",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": "Instant",
+    "SUMMARY": "Increase a weapon’s damage by +2/+4.",
+    "Arcane Backgrounds": "CHEMIST, NECROMANCER, SHAMAN, SORCERER, WIZARD",
+    "Domain": "Nature, Forge and Fire, Life, Light, Tempest, Trickery, War"
+  },
+  {
+    "POWER": "Sound/Silence",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 1,
+    "RANGE": "Sm*5/5",
+    "DURATION": "Instant/5",
+    "SUMMARY": "Create or mute sound.",
+    "Arcane Backgrounds": "ILLUSIONIST, NECROMANCER, SHAMAN, SORCERER, WIZARD",
+    "Domain": "Nature, Tempest"
+  },
+  {
+    "POWER": "Speak Language",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 1,
+    "RANGE": "Sm",
+    "DURATION": "10m",
+    "SUMMARY": "Caster can speak and understand languages.",
+    "Arcane Backgrounds": "CHEMIST, SHAMAN, SORCERER, WIZARD",
+    "Domain": "Knowledge"
+  },
+  {
+    "POWER": "Stun",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": "Instant",
+    "SUMMARY": "Target is Stunned.",
+    "Arcane Backgrounds": "NECROMANCER, SHAMAN, SORCERER, TINKERER, WIZARD",
+    "Domain": "Light, Tempest, War"
+  },
+  {
+    "POWER": "Summon Ally",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 1,
+    "RANGE": "Sm",
+    "DURATION": 5,
+    "SUMMARY": "Conjures an ally of various sorts.",
+    "Arcane Backgrounds": "SORCERER, SUMMONER, WIZARD",
+    "Domain": "Nature"
+  },
+  {
+    "POWER": "Summon Animal",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 5,
+    "RANGE": "Sm",
+    "DURATION": 5,
+    "SUMMARY": "Conjures a natural beast.",
+    "Arcane Backgrounds": "SHAMAN, SORCERER, SUMMONER",
+    "Domain": ""
+  },
+  {
+    "POWER": "Summon Monster",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 5,
+    "RANGE": "Sm",
+    "DURATION": 5,
+    "SUMMARY": "Conjures a monster.",
+    "Arcane Backgrounds": "ELEMENTALIST (elementals of their chosen element only), SHAMAN, SORCERER, SUMMONER",
+    "Domain": ""
+  },
+  {
+    "POWER": "Summon Undead",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 5,
+    "RANGE": "Sm",
+    "DURATION": 5,
+    "SUMMARY": "Conjures undead horrors.",
+    "Arcane Backgrounds": "NECROMANCER",
+    "Domain": ""
+  },
+  {
+    "POWER": "Telekinesis",
+    "RANK": "(2) Seasoned",
+    "POWER POINTS": 5,
+    "RANGE": "Sm*2",
+    "DURATION": "Instant",
+    "SUMMARY": "Moves items, Strength d10 (d12 with a raise).",
+    "Arcane Backgrounds": "ELEMENTALIST (air only), NECROMANCER, WIZARD",
+    "Domain": "Forge and Fire, Tempest"
+  },
+  {
+    "POWER": "Teleport",
+    "RANK": "(2) Seasoned",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": "Instant",
+    "SUMMARY": "Character teleports up to 12\" distant.",
+    "Arcane Backgrounds": "NECROMANCER, WIZARD",
+    "Domain": ""
+  },
+  {
+    "POWER": "Time Stop",
+    "RANK": "(4) Heroic",
+    "POWER POINTS": 10,
+    "RANGE": "Self",
+    "DURATION": "Instant",
+    "SUMMARY": "Caster gets additional 1d4+1 turns.",
+    "Arcane Backgrounds": "WIZARD",
+    "Domain": ""
+  },
+  {
+    "POWER": "Wall Walker",
+    "RANK": "(1) Novice",
+    "POWER POINTS": 2,
+    "RANGE": "Sm",
+    "DURATION": 5,
+    "SUMMARY": "Character can walk on walls at half Pace (full Pace with raise).",
+    "Arcane Backgrounds": "CHEMIST, NECROMANCER, SHAMAN, SORCERER, SUMMONER, TINKERER, WIZARD",
+    "Domain": "Nature"
+  },
+  {
+    "POWER": "Warrior's Gift",
+    "RANK": "(2) Seasoned",
+    "POWER POINTS": 4,
+    "RANGE": "Sm",
+    "DURATION": 5,
+    "SUMMARY": "Grant target a Combat Edge.",
+    "Arcane Backgrounds": "CHEMIST, NECROMANCER, SHAMAN, SORCERER, WIZARD",
+    "Domain": "War"
+  },
+  {
+    "POWER": "Wish",
+    "RANK": "(5) Legendary",
+    "POWER POINTS": 20,
+    "RANGE": "Sm",
+    "DURATION": "Instant",
+    "SUMMARY": "Choose one of several reality-altering.",
+    "Arcane Backgrounds": "WIZARD",
+    "Domain": ""
+  },
+  {
+    "POWER": "Zombie",
+    "RANK": "(3) Veteran",
+    "POWER POINTS": 3,
+    "RANGE": "Sm",
+    "DURATION": "1h",
+    "SUMMARY": "Raises and controls the undead.",
+    "Arcane Backgrounds": "NECROMANCER, WIZARD",
+    "Domain": "Death"
+  }
+]
+}

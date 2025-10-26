@@ -1,0 +1,24 @@
+.filter-panel {
+  @include box-shadow(1);
+  padding: 1rem;
+  margin-bottom: 2rem;
+  background-color: $light-bg;
+
+  &.dark {
+    background-color: $dark-bg;
+    color: $dark-text;
+  }
+}
+
+.power-table {
+  @include box-shadow(2);
+
+  .MuiTable-root {
+    background-color: $light-bg;
+
+    &.dark {
+      background-color: $dark-bg;
+      color: $dark-text;
+    }
+  }
+}
