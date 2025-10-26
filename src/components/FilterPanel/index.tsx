@@ -39,19 +39,17 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ filters, onFilterChange, filt
 
   const { ranks, powerPoints, arcaneBackgrounds, domains } = filterOptions;
 
-  const handleCheckboxChange = (group: keyof Filters, value: string | number) => {
-    const newFilters = { ...filters };
-    if (!newFilters[group]) {
-      newFilters[group] = [];
-    }
+  const handleCheckboxChange = <K extends keyof Filters>(group: K, value: NonNullable<Filters[K]>[number]) => {
+    const currentGroup = filters[group] as (typeof value)[] | undefined;
+    let newGroup: (typeof value)[];
 
-    if (newFilters[group]!.includes(value as never)) {
-      newFilters[group] = newFilters[group]!.filter(item => item !== value);
+    if (currentGroup?.includes(value)) {
+      newGroup = currentGroup.filter(item => item !== value);
     } else {
-      newFilters[group]!.push(value as never);
+      newGroup = [...(currentGroup || []), value];
     }
 
-    onFilterChange(newFilters);
+    onFilterChange({ ...filters, [group]: newGroup });
   };
 
   return (
