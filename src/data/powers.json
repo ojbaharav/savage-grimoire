@@ -34,7 +34,7 @@
   {
     "POWER": "Beast Friend",
     "RANK": "(1) Novice",
-    "POWER POINTS": "S",
+    "POWER POINTS": 0,
     "RANGE": "Sm",
     "DURATION": "10m",
     "SUMMARY": "Controls animals.",
