@@ -6,6 +6,7 @@ interface Filters {
   powerPoints?: number[];
   arcane_background?: string[];
   domain?: string[];
+  duration?: string[];
 }
 
 export const useFilters = (initialPowers: Power[]) => {
@@ -39,6 +40,10 @@ export const useFilters = (initialPowers: Power[]) => {
       if (!filters.domain.some(dom => power.domain.includes(dom))) {
         return false;
       }
+    }
+
+    if (filters.duration && filters.duration.length > 0 && !filters.duration.includes(power.duration)) {
+      return false;
     }
 
     if (searchQuery) {

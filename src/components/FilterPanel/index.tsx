@@ -9,7 +9,12 @@ import {
   useMediaQuery,
   Button,
   Collapse,
+  Select,
+  MenuItem,
+  FormControl,
+  InputLabel,
 } from '@mui/material';
+import { type SelectChangeEvent } from '@mui/material/Select';
 import { useTheme } from '@mui/material/styles';
 
 interface Filters {
@@ -17,6 +22,7 @@ interface Filters {
   powerPoints?: number[];
   arcane_background?: string[];
   domain?: string[];
+  duration?: string[];
 }
 
 interface FilterOptions {
@@ -24,6 +30,7 @@ interface FilterOptions {
   powerPoints: number[];
   arcaneBackgrounds: string[];
   domains: string[];
+  durations: string[];
 }
 
 interface FilterPanelProps {
@@ -37,7 +44,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ filters, onFilterChange, filt
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [isExpanded, setIsExpanded] = useState(!isMobile);
 
-  const { ranks, powerPoints, arcaneBackgrounds, domains } = filterOptions;
+  const { ranks, powerPoints, arcaneBackgrounds, domains, durations } = filterOptions;
 
   const handleCheckboxChange = <K extends keyof Filters>(group: K, value: NonNullable<Filters[K]>[number]) => {
     const currentGroup = filters[group] as (typeof value)[] | undefined;
@@ -50,6 +57,11 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ filters, onFilterChange, filt
     }
 
     onFilterChange({ ...filters, [group]: newGroup });
+  };
+
+  const handleSelectChange = (event: SelectChangeEvent<string[]>) => {
+    const { value } = event.target;
+    onFilterChange({ ...filters, duration: typeof value === 'string' ? value.split(',') : value });
   };
 
   return (
@@ -77,21 +89,29 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ filters, onFilterChange, filt
             />
           ))}
         </Box>
-        {/* <Box mt={2}>
-          <Typography variant="subtitle1">Power Points</Typography>
-          {powerPoints.map(pp => (
-            <FormControlLabel
-              key={pp}
-              control={
-                <Checkbox
-                  checked={filters.powerPoints?.includes(pp) || false}
-                  onChange={() => handleCheckboxChange('powerPoints', pp)}
-                />
-              }
-              label={pp.toString()}
-            />
-          ))}
-        </Box> */}
+        <Box mt={2}>
+          <FormControl fullWidth>
+            <InputLabel>Duration</InputLabel>
+            <Select
+              multiple
+              value={filters.duration || []}
+              onChange={handleSelectChange}
+              renderValue={selected => (
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                  {selected.map(value => (
+                    <Chip key={value} label={value} />
+                  ))}
+                </Box>
+              )}
+            >
+              {durations.map(duration => (
+                <MenuItem key={duration} value={duration}>
+                  {duration}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Box>
         <Box mt={2}>
           <Typography variant="subtitle1">Arcane Background</Typography>
           {arcaneBackgrounds.map(ab => (

@@ -36,6 +36,7 @@ const App = () => {
     powerPoints: getUniqueValues(powers, 'powerPoints'),
     arcaneBackgrounds: getUniqueValues(powers, 'arcane_background'),
     domains: getUniqueValues(powers, 'domain'),
+    durations: getUniqueValues(powers, 'duration'),
   };
 
   return (
