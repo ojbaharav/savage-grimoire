@@ -3,11 +3,11 @@ import { type Power } from '../utils/dataLoader.ts';
 
 interface SortConfig {
   key: keyof Power;
-  direction: 'ascending' | 'descending';
+  direction: 'asc' | 'desc';
 }
 
 export const useSorting = (initialPowers: Power[]) => {
-  const [sortConfig, setSortConfig] = useState<SortConfig>({ key: 'name', direction: 'ascending' });
+  const [sortConfig, setSortConfig] = useState<SortConfig>({ key: 'name', direction: 'asc' });
 
   const sortedPowers = [...initialPowers].sort((a, b) => {
     const aValue = a[sortConfig.key];
@@ -20,13 +20,13 @@ export const useSorting = (initialPowers: Power[]) => {
       compare = aValue - bValue;
     }
 
-    return sortConfig.direction === 'ascending' ? compare : -compare;
+    return sortConfig.direction === 'asc' ? compare : -compare;
   });
 
   const requestSort = (key: keyof Power) => {
-    let direction: 'ascending' | 'descending' = 'ascending';
-    if (sortConfig.key === key && sortConfig.direction === 'ascending') {
-      direction = 'descending';
+    let direction: 'asc' | 'desc' = 'asc';
+    if (sortConfig.key === key && sortConfig.direction === 'asc') {
+      direction = 'desc';
     }
     setSortConfig({ key, direction });
   };

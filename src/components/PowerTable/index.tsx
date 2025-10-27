@@ -13,7 +13,7 @@ import type { Power } from '../../utils/dataLoader.ts';
 
 interface SortConfig {
   key: keyof Power;
-  direction: 'ascending' | 'descending';
+  direction: 'asc' | 'desc';
 }
 
 interface PowerTableProps {
