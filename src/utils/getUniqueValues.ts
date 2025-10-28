@@ -9,5 +9,8 @@ export const getUniqueValues = <T, K extends keyof T>(data: T[], key: K) => {
   // 3. Use a Set to get the unique values and then convert the Set back to an array.
   const uniqueValues = [...new Set(flattenedValues)];
 
+  // 4. Sort the unique values in ascending order.
+  uniqueValues.sort();
+
   return uniqueValues;
 };
