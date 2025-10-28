@@ -123,10 +123,24 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ filters, onFilterChange, filt
     onFilterChange({ ...filters, [group]: newGroup });
   };
 
-  const handleSelectChange = (event: SelectChangeEvent<string[]>) => {
+  const handleDurationChange = (event: SelectChangeEvent<string[]>) => {
     const { value } = event.target;
-    onFilterChange({ ...filters, duration: typeof value === 'string' ? value.split(',') : value });
+    const newValues = typeof value === 'string' ? value.split(',') : value;
+
+    if (newValues.includes('Any')) {
+      const lastSelectedItem = newValues[newValues.length - 1];
+      
+      if (lastSelectedItem === 'Any') {
+        onFilterChange({ ...filters, duration: [] });
+      } else {
+        onFilterChange({ ...filters, duration: newValues.filter(v => v !== 'Any') });
+      }
+    } else {
+      onFilterChange({ ...filters, duration: newValues });
+    }
   };
+
+  const durationOptions = ['Any', ...durations];
 
   return (
     <Box>
@@ -158,17 +172,20 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ filters, onFilterChange, filt
             <InputLabel>Duration</InputLabel>
             <Select
               multiple
-              value={filters.duration || []}
-              onChange={handleSelectChange}
+              value={filters.duration?.length ? filters.duration : ['Any']}
+              onChange={handleDurationChange}
               renderValue={selected => (
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                  {selected.map(value => (
-                    <Chip key={value} label={value} />
-                  ))}
+                  {(selected.length === 0 || (selected.length === 1 && selected[0] === 'Any')) 
+                    ? <Chip key="any" label="Any" /> 
+                    : selected.filter(val => val !== 'Any').map(value => (
+                        <Chip key={value} label={value} />
+                      ))
+                  }
                 </Box>
               )}
             >
-              {durations.map(duration => (
+              {durationOptions.map(duration => (
                 <MenuItem key={duration} value={duration}>
                   {duration}
                 </MenuItem>
