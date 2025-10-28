@@ -1,13 +1,6 @@
 import { useState } from 'react';
 import { type Power } from '../utils/dataLoader.ts';
-
-interface Filters {
-  rank?: string[];
-  powerPoints?: number[];
-  arcane_background?: { [key: string]: string | boolean };
-  domain?: string[];
-  duration?: string[];
-}
+import { type Filters } from '../types/filters';
 
 export const useFilters = (initialPowers: Power[]) => {
   const [filters, setFilters] = useState<Filters>({});
