@@ -17,10 +17,15 @@ import {
 import { type SelectChangeEvent } from '@mui/material/Select';
 import { useTheme } from '@mui/material/styles';
 
+// Define the structure of the arcane_background filter
+interface ArcaneBackgroundFilter {
+  [key: string]: string | boolean;
+}
+
 interface Filters {
   rank?: string[];
   powerPoints?: number[];
-  arcane_background?: string[];
+  arcane_background?: ArcaneBackgroundFilter;
   domain?: string[];
   duration?: string[];
 }
@@ -45,6 +50,65 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ filters, onFilterChange, filt
   const [isExpanded, setIsExpanded] = useState(!isMobile);
 
   const { ranks, powerPoints, arcaneBackgrounds, domains, durations } = filterOptions;
+
+  // --- Start of new logic for Arcane Backgrounds ---
+
+  // State for sub-filters
+  const [elementalistSubType, setElementalistSubType] = useState('Any');
+  const [summonerSubType, setSummonerSubType] = useState('Any');
+
+  // Process arcane backgrounds to group them
+  const mainBackgrounds = [...new Set(arcaneBackgrounds.map(bg => {
+    if (bg.startsWith('ELEMENTALIST')) return 'ELEMENTALIST';
+    if (bg.startsWith('SUMMONER')) return 'SUMMONER';
+    return bg;
+  }))].sort();
+
+  const elementalistSubTypes = ['Any', ...new Set(arcaneBackgrounds
+    .filter(bg => bg.startsWith('ELEMENTALIST ('))
+    .map(bg => bg.match(/\((.*)\)/)?.[1] || '')
+    .filter(Boolean))].sort();
+
+  const summonerSubTypes = ['Any', ...new Set(arcaneBackgrounds
+    .filter(bg => bg.startsWith('SUMMONER ('))
+    .map(bg => bg.match(/\((.*)\)/)?.[1] || '')
+    .filter(Boolean))].sort();
+
+  const handleArcaneBgChange = (background: string) => {
+    const newArcaneFilters = { ...(filters.arcane_background || {}) };
+
+    if (newArcaneFilters[background]) {
+      delete newArcaneFilters[background];
+      // Reset sub-type when unchecked
+      if (background === 'ELEMENTALIST') setElementalistSubType('Any');
+      if (background === 'SUMMONER') setSummonerSubType('Any');
+    } else {
+      if (background === 'ELEMENTALIST') {
+        newArcaneFilters[background] = elementalistSubType;
+      } else if (background === 'SUMMONER') {
+        newArcaneFilters[background] = summonerSubType;
+      } else {
+        newArcaneFilters[background] = true;
+      }
+    }
+    onFilterChange({ ...filters, arcane_background: newArcaneFilters });
+  };
+
+  const handleSubtypeChange = (background: 'ELEMENTALIST' | 'SUMMONER', subType: string) => {
+    if (background === 'ELEMENTALIST') {
+      setElementalistSubType(subType);
+    } else if (background === 'SUMMONER') {
+      setSummonerSubType(subType);
+    }
+
+    // Update the main filter state if the parent checkbox is active
+    if (filters.arcane_background?.[background]) {
+      const newArcaneFilters = { ...filters.arcane_background, [background]: subType };
+      onFilterChange({ ...filters, arcane_background: newArcaneFilters });
+    }
+  };
+
+  // --- End of new logic for Arcane Backgrounds ---
 
   const handleCheckboxChange = <K extends keyof Filters>(group: K, value: NonNullable<Filters[K]>[number]) => {
     const currentGroup = filters[group] as (typeof value)[] | undefined;
@@ -114,17 +178,46 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ filters, onFilterChange, filt
         </Box>
         <Box mt={2}>
           <Typography variant="subtitle1">Arcane Background</Typography>
-          {arcaneBackgrounds.map(ab => (
+          {mainBackgrounds.map(ab => (
+            <React.Fragment key={ab}>
             <FormControlLabel
-              key={ab}
               control={
                 <Checkbox
-                  checked={filters.arcane_background?.includes(ab) || false}
-                  onChange={() => handleCheckboxChange('arcane_background', ab)}
+                  checked={!!filters.arcane_background?.[ab]}
+                  onChange={() => handleArcaneBgChange(ab)}
                 />
               }
               label={ab}
             />
+            {ab === 'ELEMENTALIST' && filters.arcane_background?.ELEMENTALIST && (
+              <Box pl={3} my={1}>
+                <FormControl fullWidth size="small">
+                  <InputLabel>Sub-type</InputLabel>
+                  <Select
+                    value={elementalistSubType}
+                    label="Sub-type"
+                    onChange={(e) => handleSubtypeChange('ELEMENTALIST', e.target.value as string)}
+                  >
+                    {elementalistSubTypes.map(sub => <MenuItem key={sub} value={sub}>{sub}</MenuItem>)}
+                  </Select>
+                </FormControl>
+              </Box>
+            )}
+            {ab === 'SUMMONER' && filters.arcane_background?.SUMMONER && (
+              <Box pl={3} my={1}>
+                <FormControl fullWidth size="small">
+                  <InputLabel>Sub-type</InputLabel>
+                  <Select
+                    value={summonerSubType}
+                    label="Sub-type"
+                    onChange={(e) => handleSubtypeChange('SUMMONER', e.target.value as string)}
+                  >
+                    {summonerSubTypes.map(sub => <MenuItem key={sub} value={sub}>{sub}</MenuItem>)}
+                  </Select>
+                </FormControl>
+              </Box>
+            )}
+            </React.Fragment>
           ))}
         </Box>
         <Box mt={2}>

@@ -4,7 +4,7 @@ import { type Power } from '../utils/dataLoader.ts';
 interface Filters {
   rank?: string[];
   powerPoints?: number[];
-  arcane_background?: string[];
+  arcane_background?: { [key: string]: string | boolean };
   domain?: string[];
   duration?: string[];
 }
@@ -30,8 +30,24 @@ export const useFilters = (initialPowers: Power[]) => {
       return false;
     }
 
-    if (filters.arcane_background && filters.arcane_background.length > 0) {
-      if (!filters.arcane_background.some(bg => power.arcane_background.includes(bg))) {
+    if (filters.arcane_background && Object.keys(filters.arcane_background).length > 0) {
+      const powerBgs = power.arcane_background;
+      const filterBgs = filters.arcane_background;
+
+      const isMatch = Object.keys(filterBgs).some(filterBg => {
+        if (filterBg === 'ELEMENTALIST' || filterBg === 'SUMMONER') {
+          const subFilter = filterBgs[filterBg];
+          if (subFilter === 'Any') {
+            return powerBgs.some(powerBg => powerBg.startsWith(filterBg));
+          } else {
+            return powerBgs.includes(`${filterBg} (${subFilter})`);
+          }
+        } else {
+          return powerBgs.includes(filterBg);
+        }
+      });
+
+      if (!isMatch) {
         return false;
       }
     }
