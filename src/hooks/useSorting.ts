@@ -1,10 +1,6 @@
 import { useState } from 'react';
 import { type Power } from '../utils/dataLoader.ts';
-
-interface SortConfig {
-  key: keyof Power;
-  direction: 'asc' | 'desc';
-}
+import { type SortConfig } from '../types/sorting.ts';
 
 export const useSorting = (initialPowers: Power[]) => {
   const [sortConfig, setSortConfig] = useState<SortConfig>({ key: 'name', direction: 'asc' });

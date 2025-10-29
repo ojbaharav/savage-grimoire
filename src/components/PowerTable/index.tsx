@@ -10,11 +10,7 @@ import {
   TableSortLabel,
 } from '@mui/material';
 import type { Power } from '../../utils/dataLoader.ts';
-
-interface SortConfig {
-  key: keyof Power;
-  direction: 'asc' | 'desc';
-}
+import { type SortConfig } from '../../types/sorting.ts';
 
 interface PowerTableProps {
   powers: Power[];
