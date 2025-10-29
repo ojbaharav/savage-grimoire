@@ -13,6 +13,11 @@ interface RankFilterProps {
   onFilterChange: (newFilters: Filters) => void;
 }
 
+const getDisplayRank = (fullRank: string): string => {
+  const match = fullRank.match(/\(.*?\)\s*(.*)/);
+  return match ? match[1] : fullRank;
+};
+
 const RankFilter: React.FC<RankFilterProps> = ({ filters, ranks, onFilterChange }) => {
   const handleCheckboxChange = (rank: string) => {
     const currentRanks = filters.rank || [];
@@ -39,7 +44,7 @@ const RankFilter: React.FC<RankFilterProps> = ({ filters, ranks, onFilterChange 
               onChange={() => handleCheckboxChange(rank)}
             />
           }
-          label={rank}
+          label={getDisplayRank(rank)}
         />
       ))}
     </Box>

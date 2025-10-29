@@ -22,6 +22,11 @@ interface PowerTableProps {
   sortConfig: SortConfig;
 }
 
+const getDisplayRank = (fullRank: string): string => {
+  const match = fullRank.match(/\(.*?\)\s*(.*)/);
+  return match ? match[1] : fullRank;
+};
+
 const PowerTable: React.FC<PowerTableProps> = ({ powers, requestSort, sortConfig }) => {
   const headers: { key: keyof Power; label: string }[] = [
     { key: 'name', label: 'Power' },
@@ -54,7 +59,7 @@ const PowerTable: React.FC<PowerTableProps> = ({ powers, requestSort, sortConfig
           {powers.map(power => (
             <TableRow key={power.id}>
               <TableCell>{power.name}</TableCell>
-              <TableCell>{power.rank}</TableCell>
+              <TableCell>{getDisplayRank(power.rank)}</TableCell>
               <TableCell>{power.powerPoints}</TableCell>
               <TableCell>{power.range}</TableCell>
               <TableCell>{power.duration}</TableCell>
