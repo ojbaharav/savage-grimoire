@@ -30,11 +30,14 @@ export const useFilters = (initialPowers: Power[]) => {
       const isMatch = Object.keys(filterBgs).some(filterBg => {
         if (filterBg === 'ELEMENTALIST' || filterBg === 'SUMMONER') {
           const subFilter = filterBgs[filterBg];
+          if (subFilter === true) { // Handle "None" sub-type
+            return powerBgs.includes(filterBg);
+          }
           if (subFilter === 'Any') {
             return powerBgs.some(powerBg => powerBg.startsWith(filterBg));
-          } else {
-            return powerBgs.includes(`${filterBg} (${subFilter})`);
           }
+          // Handle specific sub-type
+          return powerBgs.includes(`${filterBg} (${subFilter})`);
         } else {
           return powerBgs.includes(filterBg);
         }

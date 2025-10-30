@@ -20,8 +20,8 @@ const ArcaneBackgroundFilter: React.FC<ArcaneBackgroundFilterProps> = ({
   arcaneBackgrounds,
   onFilterChange,
 }) => {
-  const [elementalistSubType, setElementalistSubType] = useState('Any');
-  const [summonerSubType, setSummonerSubType] = useState('Any');
+  const [elementalistSubType, setElementalistSubType] = useState('None');
+  const [summonerSubType, setSummonerSubType] = useState('None');
 
   const mainBackgrounds = [
     ...new Set(
@@ -33,27 +33,33 @@ const ArcaneBackgroundFilter: React.FC<ArcaneBackgroundFilterProps> = ({
     ),
   ].sort();
 
-  const elementalistSubTypes = ['Any', ...new Set(arcaneBackgrounds
+  const elementalistSubTypes = ['None', 'Any', ...new Set(arcaneBackgrounds
     .filter(bg => bg.startsWith('ELEMENTALIST ('))
     .map(bg => bg.match(/\((.*)\)/)?.[1] || '')
     .filter(Boolean))].sort();
 
-  const summonerSubTypes = ['Any', ...new Set(arcaneBackgrounds
+  const summonerSubTypes = ['None', 'Any', ...new Set(arcaneBackgrounds
     .filter(bg => bg.startsWith('SUMMONER ('))
     .map(bg => bg.match(/\((.*)\)/)?.[1] || '')
     .filter(Boolean))].sort();
 
   useEffect(() => {
-    // Sync local state with global filter state
-    if (filters.arcane_background?.ELEMENTALIST && typeof filters.arcane_background.ELEMENTALIST === 'string') {
-      setElementalistSubType(filters.arcane_background.ELEMENTALIST);
+    const elementalistFilter = filters.arcane_background?.ELEMENTALIST;
+    if (elementalistFilter === true) {
+      setElementalistSubType('None');
+    } else if (typeof elementalistFilter === 'string') {
+      setElementalistSubType(elementalistFilter);
     } else {
-      setElementalistSubType('Any');
+      setElementalistSubType('None');
     }
-    if (filters.arcane_background?.SUMMONER && typeof filters.arcane_background.SUMMONER === 'string') {
-      setSummonerSubType(filters.arcane_background.SUMMONER);
+    
+    const summonerFilter = filters.arcane_background?.SUMMONER;
+    if (summonerFilter === true) {
+      setSummonerSubType('None');
+    } else if (typeof summonerFilter === 'string') {
+      setSummonerSubType(summonerFilter);
     } else {
-      setSummonerSubType('Any');
+      setSummonerSubType('None');
     }
   }, [filters.arcane_background]);
 
@@ -63,11 +69,11 @@ const ArcaneBackgroundFilter: React.FC<ArcaneBackgroundFilterProps> = ({
     const selectedBackground = event.target.value;
     const newArcaneFilters: { [key: string]: any } = {};
 
-    if (selectedBackground) { // Check for truthy value, which '' is not
+    if (selectedBackground) { 
         if (selectedBackground === 'ELEMENTALIST') {
-          newArcaneFilters[selectedBackground] = elementalistSubType;
+          newArcaneFilters[selectedBackground] = elementalistSubType === 'None' ? true : elementalistSubType;
         } else if (selectedBackground === 'SUMMONER') {
-          newArcaneFilters[selectedBackground] = summonerSubType;
+          newArcaneFilters[selectedBackground] = summonerSubType === 'None' ? true : summonerSubType;
         } else {
           newArcaneFilters[selectedBackground] = true;
         }
@@ -83,7 +89,8 @@ const ArcaneBackgroundFilter: React.FC<ArcaneBackgroundFilterProps> = ({
     }
 
     if (filters.arcane_background?.[background]) {
-      const newArcaneFilters = { ...filters.arcane_background, [background]: subType };
+      const newSubTypeValue = subType === 'None' ? true : subType;
+      const newArcaneFilters = { ...filters.arcane_background, [background]: newSubTypeValue };
       onFilterChange({ ...filters, arcane_background: newArcaneFilters });
     }
   };
@@ -97,7 +104,7 @@ const ArcaneBackgroundFilter: React.FC<ArcaneBackgroundFilterProps> = ({
         <Select
           value={selected}
           onChange={handleArcaneBgChange}
-          label="Arcane Background"          
+          label="Arcane Background"
         >
           <MenuItem value="">
             <em>None</em>
