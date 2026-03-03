@@ -1,3 +1,4 @@
+
 .filter-panel {
   @include box-shadow(1);
   padding: 1rem;
@@ -20,5 +21,83 @@
       background-color: $dark-bg;
       color: $dark-text;
     }
+  }
+}
+
+.power-card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.power-card {
+  @include box-shadow(2);
+  padding: 1.5rem;
+  background-color: $light-bg;
+  border: 1px solid $light-border;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &.dark {
+    background-color: $dark-bg;
+    border-color: $dark-border;
+    color: $dark-text;
+  }
+
+  .power-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .power-card-name {
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+
+  .power-card-rank-badge {
+    border: 2px solid $dark-text;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    min-width: 30px;
+    text-align: center;
+    .dark & {
+        border-color: $light-text;
+    }
+  }
+
+  .power-card-rank {
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  .power-card-stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+    border-top: 1px solid $light-border;
+    border-bottom: 1px solid $light-border;
+    .dark & {
+        border-color: $dark-border;
+    }
+  }
+
+  .power-card-stat {
+    text-align: center;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: $medium-text;
+    text-transform: uppercase;
+    .dark & {
+        color: $light-text;
+    }
+  }
+
+  .stat-value {
+    font-weight: bold;
   }
 }

@@ -13,11 +13,15 @@ import RankFilter from './filters/RankFilter';
 import DomainFilter from './filters/DomainFilter';
 import DurationFilter from './filters/DurationFilter';
 import ArcaneBackgroundFilter from './filters/ArcaneBackgroundFilter';
+import type { Power } from '../../utils/dataLoader.ts';
+import { type SortConfig } from '../../types/sorting.ts';
 
 interface FilterPanelProps {
   filters: Filters;
   onFilterChange: (newFilters: Filters) => void;
   filterOptions: FilterOptions;
+  requestSort: (key: keyof Power) => void;
+  sortConfig: SortConfig;
 }
 
 const FilterPanel: React.FC<FilterPanelProps> = ({ filters, onFilterChange, filterOptions }) => {
@@ -25,7 +29,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ filters, onFilterChange, filt
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [isExpanded, setIsExpanded] = useState(!isMobile);
 
-  const { ranks, powerPoints, arcaneBackgrounds, domains, durations } = filterOptions;
+  const { ranks, arcaneBackgrounds, domains, durations } = filterOptions;
 
   return (
     <Box>

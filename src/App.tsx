@@ -4,7 +4,7 @@ import { CssBaseline, Container, Box, Typography } from '@mui/material';
 import { usePowers } from './hooks/usePowers.ts';
 import { useFilters } from './hooks/useFilters.ts';
 import { useSorting } from './hooks/useSorting.ts';
-import PowerTable from './components/PowerTable/index.tsx';
+import PowerCardList from './components/PowerCardList/index.tsx';
 import FilterPanel from './components/FilterPanel/index.tsx';
 import ThemeToggle from './components/ThemeToggle/index.tsx';
 import SearchBar from './components/SearchBar/index.tsx';
@@ -46,17 +46,23 @@ const App = () => {
         <Box my={4}>
           <Box display="flex" justifyContent="space-between" alignItems="center">
             <Typography variant="h4" component="h1">
-              SWADE Powers
+              VTT Minimalist Powers
             </Typography>
             <ThemeToggle onToggle={() => setIsDarkMode(!isDarkMode)} isDarkMode={isDarkMode} />
           </Box>
           <Box display="flex" flexDirection={{ xs: 'column', md: 'row' }} sx={{ gap: 3, mt: 3 }}>
             <Box sx={{ width: { xs: '100%', md: '25%' } }}>
-              <FilterPanel filters={filters} onFilterChange={handleFilterChange} filterOptions={filterOptions} />
+              <FilterPanel 
+                filters={filters} 
+                onFilterChange={handleFilterChange} 
+                filterOptions={filterOptions} 
+                requestSort={requestSort} 
+                sortConfig={sortConfig} 
+              />
             </Box>
             <Box sx={{ width: { xs: '100%', md: '75%' } }}>
               <SearchBar onSearchChange={handleSearchChange} searchQuery={searchQuery} />
-              <PowerTable powers={sortedPowers} requestSort={requestSort} sortConfig={sortConfig} />
+              <PowerCardList powers={sortedPowers} />
             </Box>
           </Box>
         </Box>
