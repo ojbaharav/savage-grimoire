@@ -1,6 +1,8 @@
-@import "variables";
-@import "mixins";
-@import "components";
+@use "variables";
+@use "mixins";
+
+@forward "components";
+
 
 body {
   margin: 0;
