@@ -20,7 +20,24 @@ const App = () => {
   const theme = createTheme({
     palette: {
       mode: isDarkMode ? 'dark' : 'light',
+      primary: {
+        main: '#4a90e2',
+      },
+      secondary: {
+        main: '#f5a623',
+      },
+      background: {
+        default: isDarkMode ? '#212529' : '#f8f9fa',
+        paper: isDarkMode ? '#343a40' : '#ffffff',
+      },
+      text: {
+        primary: isDarkMode ? '#f8f9fa' : '#343a40',
+        secondary: isDarkMode ? '#ced4da' : '#6c757d',
+      },
     },
+    typography: {
+        fontFamily: 'Roboto, sans-serif',
+    }
   });
 
   if (loading) {

@@ -1,8 +1,23 @@
+@use 'variables';
+@use 'sass:map';
+
+@function themed($key) {
+  @return map.get(variables.$light-theme, $key);
+}
+
+@mixin themed-property($property, $key) {
+  #{$property}: themed($key);
+
+  .dark & {
+    #{$property}: map.get(variables.$dark-theme, $key);
+  }
+}
+
 @mixin box-shadow($level: 1) {
   @if $level == 1 {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow: variables.$box-shadow-sm;
   } @else if $level == 2 {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: variables.$box-shadow-md;
   }
 }
 
