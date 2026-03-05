@@ -25,66 +25,102 @@ body {
   }
 }
 
+
 .power-card-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: map.get(variables.$spacing, 5);
 }
 
 .power-card {
-  @include mixins.box-shadow(1);
-  padding: map.get(variables.$spacing, 5);
-  border-radius: variables.$border-radius;
-  display: flex;
-  flex-direction: column;
-  gap: map.get(variables.$spacing, 4);
-  
-  @include mixins.themed-property('background-color', 'surface');
-  
-  border: 1px solid;
-  @include mixins.themed-property('border-color', 'border');
+  font-family: variables.$font-family-serif;
+   border-radius: 0;
+   box-shadow: 0 0 #0000, 0 0 #0000, 2px 2px 0px 0px rgba(0,0,0,0.1);
+
+  .MuiDivider-root {
+    border-color: map.get(variables.$light-theme, border);
+    .dark & {
+      border-color: map.get(variables.$dark-theme, border);
+    }
+  }
 
   .power-card-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+    padding: map.get(variables.$spacing, 4);
+    padding-bottom: map.get(variables.$spacing, 3);
   }
 
   .power-card-name {
+    font-family: variables.$font-family-serif;
     font-weight: map.get(variables.$font-weights, bold);
-    font-size: map.get(variables.$font-sizes, lg);
+    font-size: map.get(variables.$font-sizes, lg); // 1.25rem
+    line-height: 1.2;
   }
 
   .power-card-rank-badge {
-    border: 2px solid;
-    @include mixins.themed-property('border-color', 'text-primary');
-    border-radius: map.get(variables.$spacing, 1);
-    padding: map.get(variables.$spacing, 1) map.get(variables.$spacing, 2);
-    min-width: 30px;
-    text-align: center;
+    padding: map.get(variables.$spacing, 2);
+    min-width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border: 1px solid;
+    @include mixins.themed-property('border-color', 'border');
+    @include mixins.themed-property('background-color', 'rank-badge-bg');
   }
 
   .power-card-rank {
+    font-family: variables.$font-family-noto-serif;
     font-weight: map.get(variables.$font-weights, bold);
+    font-size: map.get(variables.$font-sizes, xl); // 1.5rem
     line-height: 1;
+    @include mixins.themed-property('color', 'accent-gold');
   }
 
   .power-card-stats {
     display: flex;
     justify-content: space-around;
-    padding: map.get(variables.$spacing, 2) 0;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
-    @include mixins.themed-property('border-color', 'border');
+    padding: map.get(variables.$spacing, 3) map.get(variables.$spacing, 4);
   }
 
   .power-card-stat {
     text-align: center;
+    flex: 1;
+    position: relative;
+
+    &:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      height: 70%;
+      transform: translateY(-50%);
+      border-right: 1px dotted;
+      @include mixins.themed-property('border-color', 'border');
+    }
   }
 
   .stat-label {
-    font-size: map.get(variables.$font-sizes, sm);
+    font-family: variables.$font-family-mono;
+    font-size: map.get(variables.$font-sizes, xs); // 10px
+    font-weight: map.get(variables.$font-weights, bold);
+    letter-spacing: 0.5px;
     text-transform: uppercase;
     @include mixins.themed-property('color', 'text-secondary');
+  }
+
+  .stat-value {
+    font-family: variables.$font-family-mono;
+    font-weight: map.get(variables.$font-weights, medium);
+    font-size: map.get(variables.$font-sizes, sm); // 0.875rem
+    margin-top: map.get(variables.$spacing, 1);
+  }
+
+  .power-card-description {
+    font-family: variables.$font-family-noto-serif;
+    font-size: map.get(variables.$font-sizes, sm); // 0.875rem
+    line-height: 1.6;
+    padding: map.get(variables.$spacing, 3) map.get(variables.$spacing, 4) map.get(variables.$spacing, 4);
   }
 }

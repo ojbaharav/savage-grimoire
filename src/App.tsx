@@ -11,6 +11,21 @@ import SearchBar from './components/SearchBar/index.tsx';
 import { getUniqueValues } from './utils/getUniqueValues.ts';
 import './styles/main.scss';
 
+declare module '@mui/material/styles' {
+  interface Palette {
+    card: {
+      header: string;
+      body: string;
+    };
+  }
+  interface PaletteOptions {
+    card?: {
+      header?: string;
+      body?: string;
+    };
+  }
+}
+
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const { powers, loading, error } = usePowers();
@@ -33,6 +48,10 @@ const App = () => {
       text: {
         primary: isDarkMode ? '#f8f9fa' : '#343a40',
         secondary: isDarkMode ? '#ced4da' : '#6c757d',
+      },
+      card: {
+        header: isDarkMode ? '#252525' : '#FFFFFF',
+        body: isDarkMode ? '#2D2D2D' : '#FCFBF9',
       },
     },
     typography: {

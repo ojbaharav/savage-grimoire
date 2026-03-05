@@ -16,17 +16,22 @@ $palette: (
   // Brand
   primary: #4a90e2,
   secondary: #f5a623,
+
+  // Accent
+  accent-gold: #b8860b,
 );
 
 // 2. Theming
 $light-theme: (
   background: map-get($palette, grey-100),
   surface: white,
-  text-primary: map-get($palette, grey-800),
+  text-primary: #1a1a1a,
   text-secondary: map-get($palette, grey-600),
   border: map-get($palette, grey-300),
   primary: map-get($palette, primary),
   secondary: map-get($palette, secondary),
+  accent-gold: map-get($palette, accent-gold),
+  rank-badge-bg: map-get($palette, grey-100),
 );
 
 $dark-theme: (
@@ -37,17 +42,24 @@ $dark-theme: (
   border: map-get($palette, grey-700),
   primary: map-get($palette, primary),
   secondary: map-get($palette, secondary),
+  accent-gold: lighten(map-get($palette, accent-gold), 15%),
+  rank-badge-bg: map-get($palette, grey-700),
 );
 
 // 3. Typography
 $font-family-base: 'Roboto', sans-serif;
+$font-family-serif: 'Playfair Display', serif;
+$font-family-noto-serif: 'Noto Serif', serif;
+$font-family-mono: 'Roboto Mono', monospace;
 
 $font-sizes: (
-  sm: 0.875rem,
+  xs: 0.625rem, // 10px
+  sm: 0.875rem, // 14px
   base: 1rem,
   md: 1.125rem,
   lg: 1.25rem,
   xl: 1.5rem,
+  xxl: 1.75rem,
 );
 
 $font-weights: (

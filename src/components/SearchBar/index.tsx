@@ -9,6 +9,7 @@ interface SearchBarProps {
 const SearchBar: React.FC<SearchBarProps> = ({ onSearchChange, searchQuery }) => {
   return (
     <TextField
+      sx={{marginBottom: '2rem'}} 
       label="Search"
       variant="outlined"
       fullWidth
