@@ -7,13 +7,6 @@ body {
     @include mixins.themed-property('color', 'text-primary');
 }
 
-.filter-panel {
-  @include mixins.box-shadow(1);
-  padding: map.get(variables.$spacing, 4);
-  margin-bottom: map.get(variables.$spacing, 5);
-  border-radius: variables.$border-radius;
-  @include mixins.themed-property('background-color', 'surface');
-}
 
 .power-table {
   @include mixins.box-shadow(2);

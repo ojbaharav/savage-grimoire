@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { CssBaseline, Container, Box, Typography } from '@mui/material';
+import { CssBaseline, Container, Box, Typography, Paper } from '@mui/material';
 import { usePowers } from './hooks/usePowers.ts';
 import { useFilters } from './hooks/useFilters.ts';
 import { useSorting } from './hooks/useSorting.ts';
@@ -12,6 +12,9 @@ import { getUniqueValues } from './utils/getUniqueValues.ts';
 import './styles/main.scss';
 
 declare module '@mui/material/styles' {
+  interface TypeBackground {
+    filterPanel?: string;
+  }
   interface Palette {
     card: {
       header: string;
@@ -42,8 +45,9 @@ const App = () => {
         main: '#f5a623',
       },
       background: {
-        default: isDarkMode ? '#212529' : '#f8f9fa',
+        default: isDarkMode ? '#212529' : '#F0F0F0',
         paper: isDarkMode ? '#343a40' : '#ffffff',
+        filterPanel: isDarkMode ? '#343a40' : '#F4F4F4', // Filter panel background
       },
       text: {
         primary: isDarkMode ? '#f8f9fa' : '#343a40',
@@ -79,15 +83,27 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Container>
-        <Box my={4}>
-          <Box display="flex" justifyContent="space-between" alignItems="center">
-            <Typography variant="h4" component="h1">
-              VTT Minimalist Powers
-            </Typography>
-            <ThemeToggle onToggle={() => setIsDarkMode(!isDarkMode)} isDarkMode={isDarkMode} />
-          </Box>
-          <Box display="flex" flexDirection={{ xs: 'column', md: 'row' }} sx={{ gap: 3, mt: 3 }}>
-            <Box sx={{ width: { xs: '100%', md: '25%' } }}>
+        <Box >
+          <Paper elevation={2} square={true} sx={{paddingInlineStart: '2rem', position: 'relative'}}>
+            <Box display="flex" justifyContent="space-between" alignItems="center">
+              <Typography 
+                variant="h4" 
+                component="h1"
+                sx={{
+                  fontFamily: 'Playfair Display, serif',
+                  fontSize: '1.875rem',
+                  lineHeight: '2.25',
+                  fontWeight: '700'
+                }}
+              >
+                VTT Minimalist Powers
+              </Typography>
+              <ThemeToggle onToggle={() => setIsDarkMode(!isDarkMode)} isDarkMode={isDarkMode} />
+            </Box>
+          </Paper>
+          {/* <Paper elevation={0} sx={{ mt: 0 }}> </Paper> */}
+          <Box display="flex" flexDirection={{ xs: 'column', md: 'row' }} sx={{ gap: 3 }}>
+            <Paper elevation={2} sx={{ width: { xs: '100%', md: '25%' }, padding: '1.5rem', backgroundColor: 'background.filterPanel' }}>
               <FilterPanel 
                 filters={filters} 
                 onFilterChange={handleFilterChange} 
@@ -95,12 +111,13 @@ const App = () => {
                 requestSort={requestSort} 
                 sortConfig={sortConfig} 
               />
-            </Box>
-            <Box sx={{ width: { xs: '100%', md: '75%' } }}>
+            </Paper>
+            <Box sx={{ width: { xs: '100%', md: '75%' }, pt: 3 }}>
               <SearchBar onSearchChange={handleSearchChange} searchQuery={searchQuery} />
               <PowerCardList powers={sortedPowers} />
             </Box>
           </Box>
+         
         </Box>
       </Container>
     </ThemeProvider>
