@@ -59,7 +59,7 @@ const App = () => {
       },
     },
     typography: {
-        fontFamily: 'Roboto, sans-serif',
+      fontFamily: 'Roboto, sans-serif',
     }
   });
 
@@ -84,20 +84,30 @@ const App = () => {
       <CssBaseline />
       <Container>
         <Box >
-          <Paper elevation={2} square={true} sx={{paddingInlineStart: '2rem', position: 'relative'}}>
-            <Box display="flex" justifyContent="space-between" alignItems="center">
-              <Typography 
-                variant="h4" 
-                component="h1"
-                sx={{
-                  fontFamily: 'Playfair Display, serif',
-                  fontSize: '1.875rem',
-                  lineHeight: '2.25',
-                  fontWeight: '700'
-                }}
-              >
-                VTT Minimalist Powers
-              </Typography>
+          <Paper elevation={2} square={true} sx={{ paddingInlineStart: '2rem', position: 'relative' }}>
+            <Box display="flex" justifyContent="space-between" alignItems="center" paddingBlock={2}>
+              <div>
+                <Typography
+                  variant="h4"
+                  component="h1"
+                  sx={{
+                    fontFamily: 'Playfair Display, serif',
+                    fontSize: '1.875rem',
+                    
+                    fontWeight: '700'
+                  }}
+                >
+                  Savage Grimoire
+                </Typography>
+                <Typography variant="subtitle1"
+                  sx={{                    
+                    fontSize: '1rem',
+                    letterSpacing: '0.05em'                    
+                  }}
+                >Arcane Background Powers Made Easy
+                </Typography>
+              </div>
+
               <ThemeToggle onToggle={() => setIsDarkMode(!isDarkMode)} isDarkMode={isDarkMode} />
             </Box>
           </Paper>
@@ -118,7 +128,7 @@ const App = () => {
               <PowerCardList powers={sortedPowers} />
             </Box>
           </Box>
-         
+
         </Box>
       </Container>
     </ThemeProvider>
