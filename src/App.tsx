@@ -12,28 +12,6 @@ import { getUniqueValues } from './utils/getUniqueValues.ts';
 import { getThemeOptions } from './theme.ts';
 import './styles/main.scss';
 
-declare module '@mui/material/styles' {
-  interface TypeBackground {
-    filterPanel?: string;
-  }
-  interface Palette {
-    card: {
-      header: string;
-      body: string;
-      rankBorder: string;
-      rankBg: string;
-    };
-  }
-  interface PaletteOptions {
-    card?: {
-      header?: string;
-      body?: string;
-      rankBorder?: string;
-      rankBg?: string;
-    };
-  }
-}
-
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const { powers, loading, error } = usePowers();
@@ -112,7 +90,7 @@ const App = () => {
               <ThemeToggle onToggle={() => setIsDarkMode(!isDarkMode)} isDarkMode={isDarkMode} />
             </Box>
           </Paper>
-          {/* <Paper elevation={0} sx={{ mt: 0 }}> </Paper> */}
+          
           <Box display="flex" flexDirection={{ xs: 'column', md: 'row' }} sx={{ gap: 3 }}>
             <Paper elevation={2} sx={{ width: { xs: '100%', md: '25%' }, padding: '1.5rem', backgroundColor: 'background.filterPanel', backgroundImage: 'none' }}>
               <FilterPanel

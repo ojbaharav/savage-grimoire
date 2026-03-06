@@ -1,27 +1,5 @@
 import type { ThemeOptions } from '@mui/material/styles';
 
-declare module '@mui/material/styles' {
-  interface TypeBackground {
-    filterPanel?: string;
-  }
-  interface Palette {
-    card: {
-      header: string;
-      body: string;
-      rankBorder: string;
-      rankBg: string;
-    };
-  }
-  interface PaletteOptions {
-    card?: {
-      header?: string;
-      body?: string;
-      rankBorder?: string;
-      rankBg?: string;
-    };
-  }
-}
-
 const greyPalette = {
   100: '#f8f9fa',
   200: '#e9ecef',
@@ -46,6 +24,7 @@ export const getThemeOptions = (mode: 'light' | 'dark'): ThemeOptions => ({
           text: { primary: '#343a40', secondary: '#6c757d' },
           card: { header: '#FFFFFF', body: '#FCFBF9', rankBorder: '#e5e7eb', rankBg: '#f3f4f6' },
           divider: greyPalette[300],
+          search: {primary: '#6b7280', border: '#9ca3af'}
         }
       : {
           primary: { main: '#b8860b' },
@@ -54,6 +33,7 @@ export const getThemeOptions = (mode: 'light' | 'dark'): ThemeOptions => ({
           text: { primary: '#f8f9fa', secondary: '#ced4da' },
           card: { header: '#252525', body: '#2D2D2D', rankBorder: '#4b5563', rankBg: '#1f2937' },
           divider: greyPalette[700],
+          search: {primary: '#6b7280', border: '#4b5563'}
         }),
   },
   typography: {
