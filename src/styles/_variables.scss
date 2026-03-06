@@ -1,52 +1,33 @@
 // Design Tokens
 
-// 1. Palette
-$palette: (
-  // Greys
-  grey-100: #f8f9fa,
-  grey-200: #e9ecef,
-  grey-300: #dee2e6,
-  grey-400: #ced4da,
-  grey-500: #adb5bd,
-  grey-600: #6c757d,
-  grey-700: #495057,
-  grey-800: #343a40,
-  grey-900: #212529,
-
-  // Brand
-  primary: #4a90e2,
-  secondary: #f5a623,
-
-  // Accent
-  accent-gold: #b8860b,
-);
-
-// 2. Theming
+// 1. Theming
 $light-theme: (
-  background: map-get($palette, grey-100),
-  surface: white,
-  text-primary: #1a1a1a,
-  text-secondary: map-get($palette, grey-600),
-  border: map-get($palette, grey-300),
-  primary: map-get($palette, primary),
-  secondary: map-get($palette, secondary),
-  accent-gold: map-get($palette, accent-gold),
-  rank-badge-bg: map-get($palette, grey-100),
+  background: var(--mui-palette-background-default),
+  surface: var(--mui-palette-background-paper),
+  text-primary: var(--mui-palette-text-primary),
+  text-secondary: var(--mui-palette-text-secondary),
+  border: var(--mui-palette-divider),
+  primary: var(--mui-palette-primary-main),
+  secondary: var(--mui-palette-secondary-main),
+  accent-gold: var(--mui-palette-primary-main),
+  rank-badge-border: var(--mui-palette-card-rankBorder),
+  rank-badge-bg: var(--mui-palette-card-rankBg),
 );
 
 $dark-theme: (
-  background: map-get($palette, grey-900),
-  surface: map-get($palette, grey-800),
-  text-primary: map-get($palette, grey-100),
-  text-secondary: map-get($palette, grey-400),
-  border: map-get($palette, grey-700),
-  primary: map-get($palette, primary),
-  secondary: map-get($palette, secondary),
-  accent-gold: lighten(map-get($palette, accent-gold), 15%),
-  rank-badge-bg: map-get($palette, grey-700),
+  background: var(--mui-palette-background-default),
+  surface: var(--mui-palette-background-paper),
+  text-primary: var(--mui-palette-text-primary),
+  text-secondary: var(--mui-palette-text-secondary),
+  border: var(--mui-palette-divider),
+  primary: var(--mui-palette-primary-main),
+  secondary: var(--mui-palette-secondary-main),
+  accent-gold: var(--mui-palette-primary-main),
+  rank-badge-border: var(--mui-palette-card-rankBorder),
+  rank-badge-bg: var(--mui-palette-card-rankBg),
 );
 
-// 3. Typography
+// 2. Typography
 $font-family-base: 'Roboto', sans-serif;
 $font-family-serif: 'Playfair Display', serif;
 $font-family-noto-serif: 'Noto Serif', serif;

@@ -59,7 +59,7 @@ body {
     display: grid;
     place-items: center;
     border: 1px solid;
-    @include mixins.themed-property('border-color', 'border');
+    @include mixins.themed-property('border-color', 'rank-badge-border');
     @include mixins.themed-property('background-color', 'rank-badge-bg');
   }
 

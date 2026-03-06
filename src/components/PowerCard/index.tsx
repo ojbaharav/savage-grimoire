@@ -20,7 +20,7 @@ const PowerCard: React.FC<PowerCardProps> = ({ power }) => {
       square={true} 
       className="power-card" 
       sx={{ 
-        borderColor: 'text.primary',
+        borderColor: 'secondary.main',
         backgroundColor: 'card.body'
       }}
     >
@@ -30,7 +30,7 @@ const PowerCard: React.FC<PowerCardProps> = ({ power }) => {
           backgroundColor: 'card.header'
         }}
       >
-        <Typography component="h2" className="power-card-name">{power.name}</Typography>
+        <Typography component="h2" className="power-card-name" >{power.name}</Typography>
         <Box className="power-card-rank-badge">
             <Typography className="power-card-rank">{getRankInitial(power.rank)}</Typography>
         </Box>
