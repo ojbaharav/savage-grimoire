@@ -20,12 +20,18 @@ export const useSorting = (initialPowers: Power[]) => {
   });
 
   const requestSort = (key: keyof Power) => {
-    let direction: 'asc' | 'desc' = 'asc';
-    if (sortConfig.key === key && sortConfig.direction === 'asc') {
-      direction = 'desc';
-    }
-    setSortConfig({ key, direction });
+    setSortConfig((prevConfig) => ({
+      ...prevConfig,
+      key,
+    }));
   };
 
-  return { sortedPowers, requestSort, sortConfig };
+  const setSortDirection = (direction: 'asc' | 'desc') => {
+    setSortConfig((prevConfig) => ({
+      ...prevConfig,
+      direction,
+    }));
+  };
+
+  return { sortedPowers, requestSort, sortConfig, setSortDirection };
 };

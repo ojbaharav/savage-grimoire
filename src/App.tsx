@@ -33,7 +33,7 @@ const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const { powers, loading, error } = usePowers();
   const { filters, handleFilterChange, searchQuery, handleSearchChange, filteredPowers } = useFilters(powers);
-  const { sortedPowers, requestSort, sortConfig } = useSorting(filteredPowers);
+  const { sortedPowers, requestSort, sortConfig, setSortDirection } = useSorting(filteredPowers);
 
   const theme = createTheme({
     palette: {
@@ -104,12 +104,13 @@ const App = () => {
           {/* <Paper elevation={0} sx={{ mt: 0 }}> </Paper> */}
           <Box display="flex" flexDirection={{ xs: 'column', md: 'row' }} sx={{ gap: 3 }}>
             <Paper elevation={2} sx={{ width: { xs: '100%', md: '25%' }, padding: '1.5rem', backgroundColor: 'background.filterPanel' }}>
-              <FilterPanel 
-                filters={filters} 
-                onFilterChange={handleFilterChange} 
-                filterOptions={filterOptions} 
-                requestSort={requestSort} 
-                sortConfig={sortConfig} 
+              <FilterPanel
+                filters={filters}
+                onFilterChange={handleFilterChange}
+                filterOptions={filterOptions}
+                requestSort={requestSort}
+                sortConfig={sortConfig}
+                setSortDirection={setSortDirection}
               />
             </Paper>
             <Box sx={{ width: { xs: '100%', md: '75%' }, pt: 3 }}>
