@@ -15,7 +15,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearchChange, searchQuery }) =>
           borderRadius: 0,
           borderColor: 'search.primary',
         },
-        '& .MuiInputLabel-root': {
+        '& .MuiInputLabel-root:not(.Mui-focused)': {
         color: 'search.primary',
       },
       }} 
