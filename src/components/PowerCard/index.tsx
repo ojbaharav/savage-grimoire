@@ -2,17 +2,14 @@ import React from 'react';
 import type { Power } from '../../utils/dataLoader';
 import { Card, Typography, Box, Divider } from '@mui/material';
 
+import { getDisplayRank } from '../../utils/ranks';
+
 interface PowerCardProps {
   power: Power;
 }
 
-const getRankInitial = (fullRank: string): string => {
-    // Extracts the first letter of the rank name (e.g., "(1) Novice" -> "N")
-    const rankName = fullRank.replace(/\(\d+\)\s*/, '').trim();
-    return rankName.charAt(0).toUpperCase();
-};
-
 const PowerCard: React.FC<PowerCardProps> = ({ power }) => {
+  const [rankName, initial] = getDisplayRank(power.rank);
   return (
     <Card 
       elevation={0} 
@@ -31,8 +28,8 @@ const PowerCard: React.FC<PowerCardProps> = ({ power }) => {
         }}
       >
         <Typography component="h2" className="power-card-name" >{power.name}</Typography>
-        <Box className="power-card-rank-badge">
-            <Typography className="power-card-rank">{getRankInitial(power.rank)}</Typography>
+        <Box className="power-card-rank-badge" aria-label={rankName}>
+            <Typography className="power-card-rank">{initial}</Typography>
         </Box>
       </Box>
       

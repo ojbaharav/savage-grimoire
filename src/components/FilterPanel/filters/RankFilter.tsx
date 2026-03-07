@@ -3,21 +3,18 @@ import {
   Box,
   MenuItem,
   Chip,
+  Typography,
 } from '@mui/material';
 import { type SelectChangeEvent } from '@mui/material/Select';
 import { type Filters } from '../../../types/filters';
 import CustomSelect from '../../CustomSelect';
+import { getDisplayRank } from '../../../utils/ranks';
 
 interface RankFilterProps {
   filters: Filters;
   ranks: string[];
   onFilterChange: (newFilters: Filters) => void;
 }
-
-const getDisplayRank = (fullRank: string): string => {
-  const match = fullRank.match(/\(.*?\)\s*(.*)/);
-  return match ? match[1] : fullRank;
-};
 
 const RankFilter: React.FC<RankFilterProps> = ({ filters, ranks, onFilterChange }) => {
   const handleRankChange = (event: SelectChangeEvent<string[]>) => {
@@ -44,18 +41,37 @@ const RankFilter: React.FC<RankFilterProps> = ({ filters, ranks, onFilterChange 
           }
           return (
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-              {selected.map(value => (
-                <Chip key={value} label={getDisplayRank(value)} />
-              ))}
+              {selected.map(value => {
+                const [rankDisplay] = getDisplayRank(value);
+                return <Chip key={value} label={rankDisplay} />
+              })}
             </Box>
           );
         }}
       >
-        {ranks.map(rank => (
-          <MenuItem key={rank} value={rank}>
-            {getDisplayRank(rank)}
-          </MenuItem>
-        ))}
+        {ranks.map(rank => {
+          const [rankDisplay, initial] = getDisplayRank(rank);
+          return (
+            <MenuItem key={rank} value={rank}>
+              <Box aria-hidden='true' sx={{
+                width: 24,
+                height: 24,
+                borderRadius: '50%',
+                backgroundColor: 'primary.main',
+                color: 'primary.contrastText',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontWeight: 'bold',
+                fontSize: '0.875rem',
+                mr: 1.5
+              }}>
+                {initial}
+              </Box>
+              <Typography>{rankDisplay}</Typography>
+            </MenuItem>
+          )
+        })}
       </CustomSelect>
     </Box>
   );
