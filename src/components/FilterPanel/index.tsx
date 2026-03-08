@@ -22,6 +22,7 @@ import DurationFilter from './filters/DurationFilter';
 import ArcaneBackgroundFilter from './filters/ArcaneBackgroundFilter';
 import type { Power } from '../../utils/dataLoader.ts';
 import { type SortConfig } from '../../types/sorting.ts';
+import ThemeToggle from '../ThemeToggle/index.tsx';
 
 interface FilterPanelProps {
   filters: Filters;
@@ -30,6 +31,8 @@ interface FilterPanelProps {
   requestSort: (key: keyof Power) => void;
   sortConfig: SortConfig;
   setSortDirection: (direction: 'asc' | 'desc') => void;
+  isDarkMode: boolean;
+  onToggle: () => void;
 }
 
 const FilterPanel: React.FC<FilterPanelProps> = ({
@@ -39,6 +42,8 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
   requestSort,
   sortConfig,
   setSortDirection,
+  isDarkMode,
+  onToggle,
 }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -94,6 +99,10 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
             <FormControlLabel value="desc" control={<Radio />} label="Descending" />
           </RadioGroup>
         </FormControl>
+        <Divider sx={{marginTop: '15px'}} />
+        <Box sx={{ mt: 2 }}>
+          <ThemeToggle onToggle={onToggle} isDarkMode={isDarkMode} />
+        </Box>
       </Collapse>
     </Box>
   );

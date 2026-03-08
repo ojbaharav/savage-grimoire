@@ -87,12 +87,17 @@ const App = () => {
                 </Typography>
               </div>
 
-              <ThemeToggle onToggle={() => setIsDarkMode(!isDarkMode)} isDarkMode={isDarkMode} />
             </Box>
           </Paper>
           
-          <Box display="flex" flexDirection={{ xs: 'column', md: 'row' }} sx={{ gap: 3 }}>
-            <Paper elevation={2} sx={{ width: { xs: '100%', md: '25%' }, padding: '1.5rem', backgroundColor: 'background.filterPanel', backgroundImage: 'none' }}>
+          <Box display="flex" flexDirection={'row'} sx={{ gap: 3 }}>
+            <Paper elevation={2} sx={{ 
+              width: { xs: '100%', md: '25%' },
+              padding: '1.5rem', 
+              backgroundColor: 'background.filterPanel', 
+              backgroundImage: 'none',
+              display: {xs: 'none', md: 'block'},
+              }}>
               <FilterPanel
                 filters={filters}
                 onFilterChange={handleFilterChange}
@@ -100,6 +105,8 @@ const App = () => {
                 requestSort={requestSort}
                 sortConfig={sortConfig}
                 setSortDirection={setSortDirection}
+                isDarkMode={isDarkMode}
+                onToggle={() => setIsDarkMode(!isDarkMode)}
               />
             </Paper>
             <Box sx={{ width: { xs: '100%', md: '75%' }, pt: 3 }}>
