@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { createTheme, ThemeProvider, type Palette } from '@mui/material/styles';
-import { CssBaseline, Container, Box, Typography, Paper, GlobalStyles } from '@mui/material';
+import { CssBaseline, Container, Box, Typography, Paper, GlobalStyles, Drawer, IconButton } from '@mui/material';
+import { Menu, Close } from '@mui/icons-material';
 import { usePowers } from './hooks/usePowers.ts';
 import { useFilters } from './hooks/useFilters.ts';
 import { useSorting } from './hooks/useSorting.ts';
@@ -14,6 +15,7 @@ import './styles/main.scss';
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const { powers, loading, error } = usePowers();
   const { filters, handleFilterChange, searchQuery, handleSearchChange, filteredPowers } = useFilters(powers);
   const { sortedPowers, requestSort, sortConfig, setSortDirection } = useSorting(filteredPowers);
@@ -87,6 +89,12 @@ const App = () => {
                 </Typography>
               </div>
 
+              <IconButton
+                sx={{ display: { md: 'none' } }}
+                onClick={() => setIsDrawerOpen(true)}
+              >
+                <Menu />
+              </IconButton>
             </Box>
           </Paper>
           
@@ -117,6 +125,30 @@ const App = () => {
 
         </Box>
       </Container>
+      <Drawer
+        anchor="right"
+        open={isDrawerOpen}
+        onClose={() => setIsDrawerOpen(false)}
+        sx={{
+          display: { xs: 'block', md: 'none' },
+        }}
+      >
+        <Box sx={{ width: 250, p: 2 }}>
+          <IconButton onClick={() => setIsDrawerOpen(false)} sx={{mb: 2}}>
+            <Close />
+          </IconButton>
+          <FilterPanel
+            filters={filters}
+            onFilterChange={handleFilterChange}
+            filterOptions={filterOptions}
+            requestSort={requestSort}
+            sortConfig={sortConfig}
+            setSortDirection={setSortDirection}
+            isDarkMode={isDarkMode}
+            onToggle={() => setIsDarkMode(!isDarkMode)}
+          />
+        </Box>
+      </Drawer>
     </ThemeProvider>
   );
 };
