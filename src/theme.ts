@@ -37,6 +37,6 @@ export const getThemeOptions = (mode: 'light' | 'dark'): ThemeOptions => ({
         }),
   },
   typography: {
-    fontFamily: 'Roboto, sans-serif',
+    fontFamily: "'Roboto Mono', sans-serif",
   },
 });

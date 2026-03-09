@@ -73,8 +73,7 @@ const App = () => {
                   component="h1"
                   sx={{
                     fontFamily: 'Playfair Display, serif',
-                    fontSize: '1.875rem',
-
+                    fontSize: {xs: '1.5rem', sm: '1.875rem'},
                     fontWeight: '700'
                   }}
                 >
@@ -82,8 +81,9 @@ const App = () => {
                 </Typography>
                 <Typography variant="subtitle1"
                   sx={{
-                    fontSize: '1rem',
-                    letterSpacing: '0.05em'
+                    fontSize: {xs: '0.75rem', sm: '1rem'},
+                    letterSpacing: '0.05em',
+                    fontStyle: 'italic'
                   }}
                 >Arcane Background Powers Made Easy
                 </Typography>
@@ -133,7 +133,7 @@ const App = () => {
           display: { xs: 'block', md: 'none' },
         }}
       >
-        <Box sx={{ width: 250, p: 2 }}>
+        <Box sx={{ width: 320, p: 2 }}>
           <IconButton onClick={() => setIsDrawerOpen(false)} sx={{ mb: 2 }}>
             <Close />
           </IconButton>
