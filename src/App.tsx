@@ -64,8 +64,8 @@ const App = () => {
       <CssBaseline />
       <GlobalStyles styles={{ ':root': cssVariables }} />
       <Container>
-        <Box >
-          <Paper elevation={2} square={true} sx={{ paddingInlineStart: '2rem', position: 'relative', backgroundImage: 'none' }}>
+        <header >
+          <Paper square={true} sx={{ boxShadow: { xs: 0, md: 2 }, paddingInlineStart: { xs: '0', md: '2rem' }, position: 'relative', backgroundImage: 'none', backgroundColor: { xs: 'initial', md: 'background.paper' } }}>
             <Box display="flex" justifyContent="space-between" alignItems="center" paddingBlock={2}>
               <div>
                 <Typography
@@ -74,56 +74,56 @@ const App = () => {
                   sx={{
                     fontFamily: 'Playfair Display, serif',
                     fontSize: '1.875rem',
-                    
+
                     fontWeight: '700'
                   }}
                 >
                   Savage Grimoire
                 </Typography>
                 <Typography variant="subtitle1"
-                  sx={{                    
+                  sx={{
                     fontSize: '1rem',
-                    letterSpacing: '0.05em'                    
+                    letterSpacing: '0.05em'
                   }}
                 >Arcane Background Powers Made Easy
                 </Typography>
               </div>
 
               <IconButton
-                sx={{ display: { md: 'none' } }}
+                sx={{ display: { md: 'none' }, backgroundColor: 'secondary.main', borderRadius: 0 }}
                 onClick={() => setIsDrawerOpen(true)}
               >
                 <Menu />
               </IconButton>
             </Box>
           </Paper>
-          
-          <Box display="flex" flexDirection={'row'} sx={{ gap: 3 }}>
-            <Paper elevation={2} sx={{ 
-              width: { xs: '100%', md: '25%' },
-              padding: '1.5rem', 
-              backgroundColor: 'background.filterPanel', 
-              backgroundImage: 'none',
-              display: {xs: 'none', md: 'block'},
-              }}>
-              <FilterPanel
-                filters={filters}
-                onFilterChange={handleFilterChange}
-                filterOptions={filterOptions}
-                requestSort={requestSort}
-                sortConfig={sortConfig}
-                setSortDirection={setSortDirection}
-                isDarkMode={isDarkMode}
-                onToggle={() => setIsDarkMode(!isDarkMode)}
-              />
-            </Paper>
-            <Box sx={{ width: { xs: '100%', md: '75%' }, pt: 3 }}>
-              <SearchBar onSearchChange={handleSearchChange} searchQuery={searchQuery} />
-              <PowerCardList powers={sortedPowers} />
-            </Box>
+        </header>
+        <Box display="flex" flexDirection={'row'} sx={{ gap: 3 }}>
+          <Paper elevation={2} sx={{
+            width: { xs: '100%', md: '25%' },
+            padding: '1.5rem',
+            backgroundColor: 'primary.light',
+            backgroundImage: 'none',
+            display: { xs: 'none', md: 'block' },
+          }}>
+            <FilterPanel
+              filters={filters}
+              onFilterChange={handleFilterChange}
+              filterOptions={filterOptions}
+              requestSort={requestSort}
+              sortConfig={sortConfig}
+              setSortDirection={setSortDirection}
+              isDarkMode={isDarkMode}
+              onToggle={() => setIsDarkMode(!isDarkMode)}
+            />
+          </Paper>
+          <Box sx={{ width: { xs: '100%', md: '75%' }, pt: { xs: 0, md: 3 } }}>
+            <SearchBar onSearchChange={handleSearchChange} searchQuery={searchQuery} />
+            <PowerCardList powers={sortedPowers} />
           </Box>
-
         </Box>
+
+
       </Container>
       <Drawer
         anchor="right"
@@ -134,7 +134,7 @@ const App = () => {
         }}
       >
         <Box sx={{ width: 250, p: 2 }}>
-          <IconButton onClick={() => setIsDrawerOpen(false)} sx={{mb: 2}}>
+          <IconButton onClick={() => setIsDrawerOpen(false)} sx={{ mb: 2 }}>
             <Close />
           </IconButton>
           <FilterPanel

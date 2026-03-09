@@ -9,6 +9,7 @@ declare module '@mui/material/styles' {
     card: {
       header: string;
       body: string;
+      border: string;
       rankBorder: string;
       rankBg: string;
     },
@@ -21,6 +22,7 @@ declare module '@mui/material/styles' {
     card?: {
       header?: string;
       body?: string;
+      border?: string;
       rankBorder?: string;
       rankBg?: string;
     },

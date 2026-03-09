@@ -17,7 +17,7 @@ const PowerCard: React.FC<PowerCardProps> = ({ power }) => {
       square={true} 
       className="power-card" 
       sx={{ 
-        borderColor: 'secondary.main',
+        borderColor: 'card.border',
         backgroundColor: 'card.body'
       }}
     >
