@@ -7,7 +7,6 @@ import { useFilters } from './hooks/useFilters.ts';
 import { useSorting } from './hooks/useSorting.ts';
 import PowerCardList from './components/PowerCardList/index.tsx';
 import FilterPanel from './components/FilterPanel/index.tsx';
-import ThemeToggle from './components/ThemeToggle/index.tsx';
 import SearchBar from './components/SearchBar/index.tsx';
 import InfoBar from './components/InfoBar/index.tsx';
 import BackToTop from './components/BackToTop/index.tsx';
