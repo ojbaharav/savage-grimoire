@@ -9,7 +9,7 @@ interface PowerCardListProps {
 
 const PowerCardList: React.FC<PowerCardListProps> = ({ powers }) => {
   return (
-    <Box className="power-card-list">
+    <Box className="power-card-list" mt={1}>
       {powers.map(power => (
         <PowerCard key={power.id} power={power} />
       ))}

@@ -9,7 +9,7 @@ interface SearchBarProps {
 const SearchBar: React.FC<SearchBarProps> = ({ onSearchChange, searchQuery }) => {
   return (
     <TextField
-      sx={{marginBottom: '2rem',
+      sx={{marginBottom: 3,
         backgroundColor: 'background.paper',        
         '& .MuiOutlinedInput-notchedOutline': {
           borderRadius: 0,

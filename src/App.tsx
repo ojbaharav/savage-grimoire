@@ -9,6 +9,7 @@ import PowerCardList from './components/PowerCardList/index.tsx';
 import FilterPanel from './components/FilterPanel/index.tsx';
 import ThemeToggle from './components/ThemeToggle/index.tsx';
 import SearchBar from './components/SearchBar/index.tsx';
+import InfoBar from './components/InfoBar/index.tsx';
 import { getUniqueValues } from './utils/getUniqueValues.ts';
 import { getThemeOptions } from './theme.ts';
 import './styles/main.scss';
@@ -17,7 +18,7 @@ const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const { powers, loading, error } = usePowers();
-  const { filters, handleFilterChange, searchQuery, handleSearchChange, filteredPowers } = useFilters(powers);
+  const { filters, handleFilterChange, searchQuery, handleSearchChange, filteredPowers, resetFilters, isFiltered } = useFilters(powers);
   const { sortedPowers, requestSort, sortConfig, setSortDirection } = useSorting(filteredPowers);
 
   const theme = React.useMemo(() => createTheme(getThemeOptions(isDarkMode ? 'dark' : 'light')), [isDarkMode]);
@@ -119,6 +120,7 @@ const App = () => {
           </Paper>
           <Box sx={{ width: { xs: '100%', md: '75%' }, pt: { xs: 0, md: 3 } }}>
             <SearchBar onSearchChange={handleSearchChange} searchQuery={searchQuery} />
+            <InfoBar count={filteredPowers.length} isFiltered={isFiltered} onReset={resetFilters} />
             <PowerCardList powers={sortedPowers} />
           </Box>
         </Box>

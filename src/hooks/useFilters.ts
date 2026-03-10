@@ -70,5 +70,26 @@ export const useFilters = (initialPowers: Power[]) => {
     return true;
   });
 
-  return { filters, handleFilterChange, searchQuery, handleSearchChange, filteredPowers };
+  const resetFilters = () => {
+    setFilters({});
+    setSearchQuery('');
+  };
+
+  const isFiltered =
+    searchQuery !== '' ||
+    (filters.rank && filters.rank.length > 0) ||
+    (filters.powerPoints && filters.powerPoints.length > 0) ||
+    (filters.arcane_background && Object.keys(filters.arcane_background).length > 0) ||
+    (filters.domain && filters.domain.length > 0) ||
+    (filters.duration && filters.duration.length > 0) || false;
+
+  return {
+    filters,
+    handleFilterChange,
+    searchQuery,
+    handleSearchChange,
+    filteredPowers,
+    resetFilters,
+    isFiltered
+  };
 };
