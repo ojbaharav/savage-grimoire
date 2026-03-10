@@ -38,7 +38,7 @@ const PowerCard: React.FC<PowerCardProps> = ({ power }) => {
       <Box className="power-card-stats">
         <Box className="power-card-stat">
           <Typography display="block" className="stat-label">PP</Typography>
-          <Typography className="stat-value">{power.powerPoints}</Typography>
+          <Typography className="stat-value">{power.powerPoints === 0 ? 'Varies' : power.powerPoints}</Typography>
         </Box>
         <Box className="power-card-stat">
           <Typography display="block" className="stat-label">Range</Typography>
