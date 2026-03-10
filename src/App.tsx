@@ -10,6 +10,7 @@ import FilterPanel from './components/FilterPanel/index.tsx';
 import ThemeToggle from './components/ThemeToggle/index.tsx';
 import SearchBar from './components/SearchBar/index.tsx';
 import InfoBar from './components/InfoBar/index.tsx';
+import BackToTop from './components/BackToTop/index.tsx';
 import { getUniqueValues } from './utils/getUniqueValues.ts';
 import { getThemeOptions } from './theme.ts';
 import './styles/main.scss';
@@ -127,6 +128,7 @@ const App = () => {
 
 
       </Container>
+      <BackToTop />
       <Drawer
         anchor="right"
         open={isDrawerOpen}
