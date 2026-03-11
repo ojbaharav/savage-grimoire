@@ -12,6 +12,7 @@ import InfoBar from './components/InfoBar/index.tsx';
 import BackToTop from './components/BackToTop/index.tsx';
 import { getUniqueValues } from './utils/getUniqueValues.ts';
 import { getThemeOptions } from './theme.ts';
+import fanLogo from './assets/SW_LOGO_FP_2018_300x200.png';
 import './styles/main.scss';
 
 const App = () => {
@@ -66,7 +67,7 @@ const App = () => {
       <GlobalStyles styles={{ ':root': cssVariables }} />
       <Container>
         <header >
-          <Paper square={true} sx={{ boxShadow: { xs: 0, md: 2 }, paddingInlineStart: { xs: '0', md: '2rem' }, position: 'relative', backgroundImage: 'none', backgroundColor: { xs: 'initial', md: 'background.paper' } }}>
+          <Paper square={true} sx={{ boxShadow: { xs: 0, md: 2 }, paddingInline: { xs: '0', md: '2rem' }, position: 'relative', backgroundImage: 'none', backgroundColor: { xs: 'initial', md: 'background.paper' } }}>
             <Box display="flex" justifyContent="space-between" alignItems="center" paddingBlock={2}>
               <div>
                 <Typography
@@ -89,6 +90,17 @@ const App = () => {
                 >Arcane Background Powers Made Easy
                 </Typography>
               </div>
+
+              <Box
+                component="img"
+                src={fanLogo}
+                alt="Savage Worlds Fan Product Logo"
+                sx={{
+                  display: { xs: 'none', md: 'block' },
+                  height: '80px',
+                  width: 'auto',
+                }}
+              />
 
               <IconButton
                 sx={{ display: { md: 'none' }, backgroundColor: 'secondary.main', borderRadius: 0 }}
@@ -128,6 +140,27 @@ const App = () => {
 
       </Container>
       <BackToTop />
+      <Box component="footer" sx={{ mt: 4, py: 2, backgroundColor: 'background.paper' }}>
+        <Container>
+          <hr />
+          <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', justifyContent: 'center', gap: 2, pt: 2}}>
+            <Box
+              component="img"
+              src={fanLogo}
+              alt="Savage Worlds Fan Product Logo"
+              sx={{
+                display: { xs: 'block', md: 'none' },
+                height: '80px',
+                width: 'auto',
+                mb: { xs: 2, md: 0 }
+              }}
+            />
+            <Typography variant="body2" color="text.secondary" align="center">
+              This game references the Savage Worlds game system, available from Pinnacle Entertainment Group at <a href="http://www.peginc.com" target="_blank" rel="noopener noreferrer">www.peginc.com</a>. Savage Worlds and all associated logos and trademarks are copyrights of Pinnacle Entertainment Group. Used with permission. Pinnacle makes no representation or warranty as to the quality, viability, or suitability for purpose of this product.
+            </Typography>
+          </Box>
+        </Container>
+      </Box>
       <Drawer
         anchor="right"
         open={isDrawerOpen}
