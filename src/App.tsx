@@ -143,7 +143,7 @@ const App = () => {
       <Box component="footer" sx={{ mt: 4, py: 2, backgroundColor: 'background.paper' }}>
         <Container>
           <hr />
-          <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', justifyContent: 'center', gap: 2, pt: 2}}>
+          <Box sx={{ display: 'flex', flexDirection: { xs: 'column' }, alignItems: 'center', justifyContent: 'center', gap: 2, pt: 2}}>
             <Box
               component="img"
               src={fanLogo}
@@ -157,6 +157,9 @@ const App = () => {
             />
             <Typography variant="body2" color="text.secondary" align="center">
               This game references the Savage Worlds game system, available from Pinnacle Entertainment Group at <a href="http://www.peginc.com" target="_blank" rel="noopener noreferrer">www.peginc.com</a>. Savage Worlds and all associated logos and trademarks are copyrights of Pinnacle Entertainment Group. Used with permission. Pinnacle makes no representation or warranty as to the quality, viability, or suitability for purpose of this product.
+            </Typography>
+            <Typography variant="body2" color="text.secondary" align="center">
+            Tab icon by <a href="http://www.freepik.com">freepik</a>
             </Typography>
           </Box>
         </Container>
