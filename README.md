@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a React application designed to help users browse and filter through a list of powers from the *Savage Worlds Fantasy Companion* or *Pathfinder for Savage Worlds* rulebooks for Savage Worlds Adventure Edition (SWADE) role-playing game. The application provides a user-friendly interface with robust filtering and sorting capabilities to make finding the right power quick and easy.
+This web application designed to help users browse and filter through a list of powers from the *Savage Worlds Fantasy Companion* or *Pathfinder for Savage Worlds* rulebooks for Savage Worlds Adventure Edition (SWADE) role-playing game. The application provides a user-friendly interface with robust filtering and sorting capabilities to make finding the right power quick and easy.
 
 ## Key Features
 
