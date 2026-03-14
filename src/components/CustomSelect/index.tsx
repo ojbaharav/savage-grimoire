@@ -24,6 +24,7 @@ const CustomSelect = <T extends string | string[] = string>(
 
   const mergedMenuProps = {
     ...MenuProps,
+    disableScrollLock: true,
     slotProps: {
       list: {
         ref: menu,
