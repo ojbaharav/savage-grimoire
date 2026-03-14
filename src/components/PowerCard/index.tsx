@@ -18,7 +18,8 @@ const PowerCard: React.FC<PowerCardProps> = ({ power }) => {
       className="power-card" 
       sx={{ 
         borderColor: 'card.border',
-        backgroundColor: 'card.body'
+        backgroundColor: 'card.body',
+        height: '100%'
       }}
     >
       <Box 
