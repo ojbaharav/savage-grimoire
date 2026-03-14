@@ -3,7 +3,6 @@ import {
   Box,
   Chip,
   MenuItem,
-  Typography,
 } from '@mui/material';
 import { type SelectChangeEvent } from '@mui/material/Select';
 import { type Filters } from '../../../types/filters';
