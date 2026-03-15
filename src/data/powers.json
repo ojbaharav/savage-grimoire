@@ -38,7 +38,7 @@
     "RANGE": "Sm",
     "DURATION": "10m",
     "SUMMARY": "Controls animals.",
-    "Arcane Backgrounds": "ALCHEMIST, SHAMAN, SORCERER, SUMMONER, WIZARD",
+    "Arcane Backgrounds": "ALCHEMIST, SHAMAN, SORCERER, SUMMONER, WIZARD, DRUID",
     "Domain": "Nature"
   },
   {
@@ -258,7 +258,7 @@
     "RANGE": "Sm",
     "DURATION": "1h",
     "SUMMARY": "Protect target from hazardous environments.",
-    "Arcane Backgrounds": "ALCHEMIST, ELEMENTALIST (native element only), SHAMAN, SORCERER, TINKERER, WIZARD",
+    "Arcane Backgrounds": "ALCHEMIST, ELEMENTALIST (native element only), SHAMAN, SORCERER, TINKERER, WIZARD, DRUID",
     "Domain": "Nature, Forge and Fire, Tempest"
   },
   {
@@ -318,7 +318,7 @@
     "RANGE": "T",
     "DURATION": "Instant",
     "SUMMARY": "Restores Wounds less than an hour old.",
-    "Arcane Backgrounds": "ALCHEMIST, ELEMENTALIST (water only), NECROMANCER, SHAMAN, SORCERER, SUMMONER (Self and Summoned creatures only)",
+    "Arcane Backgrounds": "ALCHEMIST, ELEMENTALIST (water only), NECROMANCER, SHAMAN, SORCERER, SUMMONER (Self and Summoned creatures only), CLERIC",
     "Domain": "Nature, Death, Life"
   },
   {
@@ -498,7 +498,7 @@
     "RANGE": "T",
     "DURATION": 5,
     "SUMMARY": "Foes must make a Spirit roll to attack.",
-    "Arcane Backgrounds": "CLERIC, DRUID",
+    "Arcane Backgrounds": "CLERIC",
     "Domain": "Nature"
   },
   {
@@ -518,7 +518,7 @@
     "RANGE": "Sm",
     "DURATION": 5,
     "SUMMARY": "Caster takes on the form of various beings.",
-    "Arcane Backgrounds": "ALCHEMIST, SHAMAN, SORCERER, SUMMONER, WIZARD",
+    "Arcane Backgrounds": "ALCHEMIST, SHAMAN, SORCERER, SUMMONER, WIZARD, DRUID",
     "Domain": "Nature, Trickery"
   },
   {
