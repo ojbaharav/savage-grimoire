@@ -90,7 +90,10 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
           <FormControlLabel value="desc" control={<Radio />} label="Descending" />
         </RadioGroup>
       </FormControl>
-      <Divider sx={{ marginTop: '15px' }} />
+      <Typography variant="h6" sx={{ mt: 2 }}>
+        Settings
+      </Typography>
+      <Divider />
       <Box sx={{ mt: 2 }}>
         <ThemeToggle onToggle={onToggle} isDarkMode={isDarkMode} />
       </Box>
