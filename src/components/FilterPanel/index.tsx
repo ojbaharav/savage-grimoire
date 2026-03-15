@@ -43,6 +43,10 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
 }) => {
   const { ranks, arcaneBackgrounds, domains, durations } = filterOptions;
 
+  const MenuProps = {
+    disableScrollLock: true, // Prevents body scrollbar from hiding
+  };
+
   return (
     <Box>
       <Typography variant="h6">Filters</Typography>
@@ -65,6 +69,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
           value={sortConfig.key}
           label="Field"
           onChange={(e) => requestSort(e.target.value as keyof Power)}
+          MenuProps={MenuProps}
         >
           <MenuItem value="name">Name</MenuItem>
           <MenuItem value="rank">Rank</MenuItem>

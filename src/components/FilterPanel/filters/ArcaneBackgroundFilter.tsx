@@ -97,6 +97,10 @@ const ArcaneBackgroundFilter: React.FC<ArcaneBackgroundFilterProps> = ({
 
   const selected = Object.keys(filters.arcane_background || {})[0] || '';
 
+  const MenuProps = {
+    disableScrollLock: true, // Prevents body scrollbar from hiding
+  };
+
   return (
     <Box mt={2}>
       <FormControl fullWidth>
@@ -105,6 +109,7 @@ const ArcaneBackgroundFilter: React.FC<ArcaneBackgroundFilterProps> = ({
           value={selected}
           onChange={handleArcaneBgChange}
           label="Arcane Background"
+          MenuProps={MenuProps}
         >
           <MenuItem value="">
             <em>None</em>
